@@ -1,0 +1,90 @@
+[
+  {
+    "code": "OKRA",
+    "name": "Hạt giống đậu bắp Sungreen",
+    "category": "SEED",
+    "unit": "PACK",
+    "price": "68000.00",
+    "cost": "40000.00",
+    "image": "/images/agrovia/348aa5b9a6c3c15ca5.jpg",
+    "packaging": "Gói hạt giống",
+    "brand": "Indo-US"
+  },
+  {
+    "code": "TOMATO",
+    "name": "Hạt giống cà chua Richnesh",
+    "category": "SEED",
+    "unit": "PACK",
+    "price": "45000.00",
+    "cost": "25000.00",
+    "image": "/images/agrovia/8eb1bd5b1d72517ade.jpg",
+    "packaging": "Gói hạt giống",
+    "brand": "Indo-US"
+  },
+  {
+    "code": "NPK",
+    "name": "Phân bón NPK 19-19-19",
+    "category": "NUTR",
+    "unit": "PACK",
+    "price": "125000.00",
+    "cost": "75000.00",
+    "image": "/images/agrovia/6e419ceee8de3e039d.jpg",
+    "packaging": "Gói 1 kg",
+    "brand": "Katyayani"
+  },
+  {
+    "code": "CALCIUM",
+    "name": "Dinh dưỡng Calsol Plus",
+    "category": "NUTR",
+    "unit": "BOTTLE",
+    "price": "89000.00",
+    "cost": "55000.00",
+    "image": "/images/agrovia/1a5ae44d906401030f.jpg",
+    "packaging": "Chai 100 ml",
+    "brand": "Katyayani"
+  },
+  {
+    "code": "GROWTH",
+    "name": "Dinh dưỡng Geolife Plus Gold",
+    "category": "CARE",
+    "unit": "BOTTLE",
+    "price": "95000.00",
+    "cost": "60000.00",
+    "image": "/images/agrovia/feefc76ac1a2d09ffa.jpg",
+    "packaging": "Chai dinh dưỡng",
+    "brand": "Geolife"
+  },
+  {
+    "code": "SPRAYER",
+    "name": "Bình phun áp lực Neptune 2 lít",
+    "category": "TOOLS",
+    "unit": "TOOL",
+    "price": "165000.00",
+    "cost": "100000.00",
+    "image": "/images/agrovia/8b5b707ff376b9d587.jpg",
+    "packaging": "Bình 2 lít",
+    "brand": "Neptune"
+  },
+  {
+    "code": "PEA",
+    "name": "Hạt giống đậu Hà Lan ES Pearl",
+    "category": "SEED",
+    "unit": "PACK",
+    "price": "55000.00",
+    "cost": "30000.00",
+    "image": "/images/agrovia/a5c361475faa3244d8.jpg",
+    "packaging": "Gói hạt giống",
+    "brand": "Eureka"
+  },
+  {
+    "code": "FLOWER",
+    "name": "Dinh dưỡng Flowering Booster",
+    "category": "CARE",
+    "unit": "BOTTLE",
+    "price": "99000.00",
+    "cost": "65000.00",
+    "image": "/images/agrovia/8c48e6529f7cfc94b4.jpg",
+    "packaging": "Chai 250 ml",
+    "brand": "Katyayani"
+  }
+]

@@ -1,0 +1,29 @@
+"use client"
+
+import Link from "next/link"
+import { ArrowUpRight, Check, Info, ShieldCheck } from "lucide-react"
+import { useAdminProfile } from "@/components/admin/admin-shell"
+import { adminSections, destinationAllowed, destinationHref, findDestination, legacyDestinations } from "./navigation"
+import { AdminCard, AdminField, AdminFormShell, AdminIcon, AdminTable } from "./primitives"
+
+export function ShellShowcase({ screen, tab }: { screen: string; tab: string }) {
+  const profile = useAdminProfile()
+  const current = findDestination(screen, tab)
+  const allowed = destinationAllowed(screen, profile)
+  const legacy = legacyDestinations[screen]
+  if (!current) return <AdminCard title="Không tìm thấy mục điều hướng"><p>Liên kết không thuộc 40 mục Admin V2.</p><Link className="av2-button" href="/admin/v2">Về tổng quan V2</Link></AdminCard>
+  if (!allowed) return <AdminCard title="Không có quyền truy cập"><p role="alert">Tài khoản hiện tại không có quyền mở mục này. Quyền vẫn theo hồ sơ và API hiện hành.</p><Link className="av2-button" href="/admin/v2">Về tổng quan V2</Link></AdminCard>
+
+  return <>
+    <div className="av2-page-heading"><div><p className="av2-eyebrow">GIAO DIỆN MỚI · NGHIỆP VỤ HIỆN HÀNH</p><h1>{current.item.label}</h1><p>Không gian quản trị Agrovia — Vụ Xanh. Giai đoạn 1 tích hợp khung điều hướng và thành phần chung; các màn nghiệp vụ V2 đang chờ tích hợp.</p></div><Link className="av2-button" href="/admin">Giao diện hiện tại <ArrowUpRight size={15} /></Link></div>
+    <div className="av2-notice"><Info size={18} /><p><strong>{screen === "ai" ? "AI đang tắt theo yêu cầu của Thy." : "Đang xem shell V2, chưa chuyển màn nghiệp vụ."}</strong><br />{screen === "ai" ? "Không kết nối provider, không nhận API key và không gọi trợ lý AI." : "Không hiển thị doanh thu, đơn hàng hoặc KPI mẫu như dữ liệu thật. Các thao tác nghiệp vụ vẫn dùng giao diện hiện hành."}</p></div>
+    <div className="av2-stats"><section className="av2-stat"><div className="av2-stat-top"><span><AdminIcon name="settings" /></span>Khung điều hướng</div><strong>8 nhóm · 40 mục</strong><p>Cấu trúc menu V2, không phải số liệu kinh doanh</p></section><section className="av2-stat"><div className="av2-stat-top"><span><AdminIcon name="box" /></span>Phạm vi được cấp</div><strong>{profile.branches.length} chi nhánh</strong><p>Từ hồ sơ đăng nhập hiện tại</p></section><section className="av2-stat"><div className="av2-stat-top"><span><ShieldCheck size={20} /></span>Tài khoản nhân sự</div><strong>{profile.chains.length} chuỗi</strong><p>Giữ nguyên phân quyền và dữ liệu đang có</p></section></div>
+    <div className="av2-grid"><div className="av2-stack"><AdminCard title={screen === "dashboard" ? "Các khu vực quản trị" : "Lối vào chức năng hiện hành"} description="Chỉ chuyển khung giao diện trong giai đoạn này.">
+      {screen !== "dashboard" && <><p>{legacy?.note ?? (screen === "subscriptions" ? "Chưa có API danh sách mua định kỳ cho Admin. Mục này chờ tích hợp, không lấy phiên Customer hoặc bật scheduler để điền dữ liệu." : screen === "profile" ? "Hồ sơ đọc từ phiên nhân sự hiện hành. Chưa chuyển màn chỉnh hồ sơ vào V2." : "Chưa có màn thao tác V2 trong giai đoạn 1.")}</p>{legacy && <Link prefetch={false} className="av2-button av2-button-primary" href={legacy.href}>Mở chức năng ở giao diện cũ <ArrowUpRight size={15} /></Link>}<div className="av2-quick-links">{screen === "inventory" && <Link className="av2-button" href="/admin/alerts">Cảnh báo & ngưỡng tồn</Link>}{screen === "stock" && <Link className="av2-button" href="/admin/inventory/movements">Lịch sử biến động kho</Link>}{screen === "products" && <Link className="av2-button" href="/admin/commerce">Trưng bày Shop & nội dung</Link>}</div></>}
+      {screen === "dashboard" && <AdminTable caption="Nhóm điều hướng V2 và trạng thái tích hợp" headings={["Khu vực", "Số mục", "Giai đoạn 1"]}>{adminSections.map(group => <tr key={group.key}><td><Link href={destinationHref(group.items[0])}>{group.label}</Link></td><td>{group.items.length}</td><td><span className="av2-badge">Khung điều hướng</span></td></tr>)}</AdminTable>}
+    </AdminCard><AdminCard title="Những lối truy cập vẫn được giữ" description="Không bỏ chức năng chỉ vì menu V2 dùng tên khác."><div className="av2-quick-links"><Link className="av2-button" href="/admin/catalog">Danh mục, đơn vị & nội dung</Link><Link className="av2-button" href="/admin/organization">Chuỗi, chi nhánh & kho</Link><Link className="av2-button" href="/admin/alerts">Cảnh báo & ngưỡng tồn</Link><Link className="av2-button" href="/admin/purchases">Phiếu nhập hàng</Link><Link className="av2-button" href="/admin/debts">Phải thu & phải trả</Link><Link className="av2-button" href="/admin/commerce">Shop, chính sách & banner</Link></div></AdminCard></div>
+      <div className="av2-stack"><AdminCard title="Phạm vi giai đoạn 1" description="Thay lớp trình bày, giữ nguyên nguồn nghiệp vụ."><ul className="av2-scope-list">{["Sidebar, header và breadcrumb React", "Tìm kiếm 40 mục điều hướng", "Classic / Agrovia · Sáng / Tối", "Card, bảng, form và icon chung", "Màn cũ và quyền API được giữ nguyên"].map(text => <li key={text}><Check size={16} /><span>{text}</span></li>)}</ul><span className="av2-badge">Chờ Thy duyệt giao diện</span></AdminCard>
+      <AdminCard title="Hồ sơ truy cập" description="Form shell dùng chung, hiển thị thông tin phiên thực."><AdminFormShell><legend>Chỉ đọc · không thay đổi tài khoản</legend><AdminField label="Tên đăng nhập"><input readOnly value={profile.user.username} /></AdminField><AdminField label="Chi nhánh được phân quyền"><input readOnly value={profile.branches.map(branch => branch.name).join(", ")} /></AdminField><AdminField label="Quyền xem báo cáo nội bộ"><input readOnly value={profile.user.can_view_reports ? "Được phép" : "Không được phép"} /></AdminField></AdminFormShell></AdminCard></div>
+    </div>
+  </>
+}

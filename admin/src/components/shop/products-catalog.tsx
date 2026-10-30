@@ -1,0 +1,20 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { apiFetch } from "@/lib/api"
+import { type ShopProduct } from "@/lib/shop-api"
+import { useCart } from "./cart-context"
+import { ProductCard } from "./product-card"
+import { ShopStatus, Message } from "./shop-shared"
+export function ProductsCatalog() {
+ const { chainId, home } = useCart()
+ const params = useSearchParams(), router = useRouter(), pathname = usePathname()
+ const [result, setResult] = useState<{data: ShopProduct[]; pagination: {total:number; current_page:number; last_page:number}} | null>(null)
+ const [error, setError] = useState("")
+ const [loading, setLoading] = useState(false)
+ const query = params.toString()
+ useEffect(() => { if (!chainId) return; let active = true; setLoading(true); setError(""); apiFetch<typeof result>(`/api/shop/${chainId}/products?${query}`).then(r => { if(active) setResult(r) }).catch(e => { if(active) setError(e.message) }).finally(() => { if(active) setLoading(false) }); return () => { active=false } }, [chainId,query])
+ function change(key:string,value:string) { const p = new URLSearchParams(query); p.delete("page"); if(value)p.set(key,value);else p.delete(key);router.push(`${pathname}?${p}`) }
+ return <><ShopStatus/><div className="ng-catalog"><aside className="ng-filters"><h2>Bộ lọc</h2><label>Danh mục<select value={params.get("category_id")??""} onChange={e => change("category_id",e.target.value)}><option value="">Tất cả nhóm</option>{home?.categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}</select></label><form key={query} onSubmit={e => {e.preventDefault();const fd=new FormData(e.currentTarget), p=new URLSearchParams(query);p.delete("page");for(const k of ["search","min_price","max_price","brand","origin"]){const v=String(fd.get(k)??"").trim();if(v)p.set(k,v);else p.delete(k)}router.push(`${pathname}?${p}`)}}><label>Từ khóa<input name="search" defaultValue={params.get("search")??""} placeholder="Tên, mã, hoạt chất…"/></label><label>Giá từ<input name="min_price" inputMode="decimal" defaultValue={params.get("min_price")??""} placeholder="0"/></label><label>Giá đến<input name="max_price" inputMode="decimal" defaultValue={params.get("max_price")??""} placeholder="Không giới hạn"/></label><label>Thương hiệu<input name="brand" defaultValue={params.get("brand")??""}/></label><label>Xuất xứ<input name="origin" defaultValue={params.get("origin")??""}/></label><button className="ng-button">Áp dụng bộ lọc</button></form><label className="ng-checkbox"><input type="checkbox" checked={params.get("in_stock")==="1"} onChange={e => change("in_stock",e.target.checked?"1":"")}/> Chỉ xem còn hàng</label><button className="ng-text-button" onClick={() => router.push(pathname)}>Xóa bộ lọc</button></aside><section><div className="ng-list-heading"><span>{loading ? "Đang tải…" : `${result?.pagination.total??0} sản phẩm`}</span><select aria-label="Sắp xếp sản phẩm" value={params.get("sort")??"newest"} onChange={e => change("sort",e.target.value)}><option value="newest">Mới nhất</option><option value="price_asc">Giá tăng dần</option><option value="price_desc">Giá giảm dần</option><option value="bestselling">Bán chạy</option></select></div><Message error>{error}</Message><div className={`ng-product-grid catalog ${loading ? "ng-dim" : ""}`}>{result?.data.map(p => <ProductCard key={p.id} product={p}/>)}</div>{!loading && !error && result?.data.length===0 && <div className="ng-empty"><h2>Chưa tìm thấy vật tư phù hợp</h2><p>Thử thay từ khóa hoặc bỏ bớt bộ lọc.</p></div>}{result && result.pagination.last_page>1 && <nav className="ng-pagination" aria-label="Phân trang">{Array.from({length:result.pagination.last_page},(_,i)=>i+1).filter(n=>Math.abs(n-result.pagination.current_page)<3||n===1||n===result.pagination.last_page).map(n=><button key={n} aria-current={n===result.pagination.current_page?"page":undefined} onClick={()=>{const p=new URLSearchParams(query);p.set("page",String(n));router.push(`${pathname}?${p}`)}}>{n}</button>)}</nav>}</section></div></>
+}

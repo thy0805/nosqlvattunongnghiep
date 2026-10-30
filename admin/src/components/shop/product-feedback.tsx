@@ -1,0 +1,15 @@
+"use client"
+import {useEffect,useRef,useState} from "react"
+import {shopRequest} from "@/lib/shop-api"
+import {ImagePicker} from "./image-picker"
+import {ReviewEditor} from "./review-editor"
+import type {OnlineOrder} from "@/lib/shop-orders"
+
+export function ProductFeedback({chain,product}:{chain:string;product:string}){
+ const[images,setImages]=useState<string[]>([]),[uploading,setUploading]=useState(false),[reviewVersion,setReviewVersion]=useState(0)
+ const[orders,setOrders]=useState<OnlineOrder[]>([]),[error,setError]=useState(""),[notice,setNotice]=useState(""),[busy,setBusy]=useState(false)
+ const pending=useRef<{body:string;key:string}|null>(null)
+ useEffect(()=>{void shopRequest<OnlineOrder[]>(`/api/shop/${chain}/orders`).then(rows=>setOrders(rows.filter(o=>["delivered","completed"].includes(o.status)&&o.items.some(i=>i.product_id===product)))).catch(e=>setError(e.message))},[chain,product])
+ async function send(e:React.FormEvent<HTMLFormElement>,kind:string){e.preventDefault();if(busy||uploading)return;const f=new FormData(e.currentTarget),body:Record<string,unknown>={body:f.get("body")};if(kind==="reviews"){body.order_id=f.get("order_id");body.rating=Number(f.get("rating"));body.images=images}const json=JSON.stringify(body),key=pending.current?.body===json?pending.current.key:crypto.randomUUID();pending.current={body:json,key};setBusy(true);setError("");setNotice("");try{await shopRequest(`/api/shop/${chain}/products/${product}/${kind}`,"POST",{...body,request_key:key});setNotice("Đã tiếp nhận. Nội dung sẽ xuất hiện sau khi cửa hàng kiểm duyệt.");pending.current=null;if(kind==="reviews"){setImages([]);setReviewVersion(v=>v+1)}}catch(e){setError(e instanceof Error?e.message:"Chưa gửi được nội dung.")}finally{setBusy(false)}}
+ return <section className="ng-section"><h2>Chia sẻ & hỏi cửa hàng</h2>{error&&<p className="ng-notice error" role="alert">{error}</p>}{notice&&<p className="ng-notice" role="status">{notice}</p>}<div className="ng-two-columns"><div className="ng-panel"><h3>Đánh giá từ đơn đã nhận</h3>{orders.length?<form className="ng-form" onSubmit={e=>void send(e,"reviews")}><label>Đơn đã mua<select name="order_id">{orders.map(o=><option key={o.id} value={o.id}>{o.order_no}</option>)}</select></label><label>Mức hài lòng<select name="rating" defaultValue="5">{[5,4,3,2,1].map(v=><option value={v} key={v}>{v} / 5</option>)}</select></label><label>Trải nghiệm sử dụng<textarea name="body" required maxLength={3000}/></label><ImagePicker chain={chain} purpose="review" value={images} onChange={setImages} onBusy={setUploading}/><button className="ng-button" disabled={busy||uploading}>Gửi đánh giá</button></form>:<p>Đánh giá dành cho sản phẩm thuộc đơn bạn đã nhận.</p>}</div><form className="ng-panel ng-form" onSubmit={e=>void send(e,"questions")}><h3>Hỏi đáp sản phẩm</h3><label>Câu hỏi<textarea name="body" required maxLength={3000}/></label><button className="ng-button outline" disabled={busy}>Gửi câu hỏi</button></form></div><ReviewEditor chain={chain} product={product} refreshToken={reviewVersion}/></section>
+}

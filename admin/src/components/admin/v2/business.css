@@ -1,0 +1,62 @@
+.av2-root{--background:var(--av2-canvas);--foreground:var(--av2-ink);--card:var(--av2-surface);--card-foreground:var(--av2-ink);--popover:var(--av2-surface);--popover-foreground:var(--av2-ink);--muted:var(--av2-subtle);--muted-foreground:var(--av2-muted);--primary:var(--av2-accent);--primary-foreground:var(--av2-surface);--border:var(--av2-line);--input:var(--av2-line);--ring:var(--av2-accent)}
+.av2-root .av2-business{min-width:0;max-width:100%;font-size:13px;line-height:1.65}
+.av2-root .av2-business>main,.av2-root .av2-business>.ng-shop{padding:0;min-width:0;max-width:none;background:transparent;color:var(--av2-ink);margin:0}
+.av2-root .av2-business h1{font-size:21px;letter-spacing:-.4px;line-height:1.4}
+.av2-root .av2-business h2{font-size:16px;font-weight:650;line-height:1.5}
+.av2-root .av2-business h3{font-size:14px;font-weight:600;line-height:1.5}
+.av2-root .av2-business [data-slot=card],.av2-root .av2-business .ng-panel,.av2-root .av2-business section[class*="border-black"],.av2-root .av2-business [class*="bg-[#fbfaf5]"],.av2-root .av2-business [class~="bg-white"]{background:var(--av2-surface);border-color:var(--av2-line);color:var(--av2-ink);border-radius:12px;box-shadow:none}
+.av2-root .av2-business [data-slot=card-header]{padding:22px 23px 18px;border-bottom:1px solid var(--av2-line);gap:14px}
+.av2-root .av2-business [data-slot=card-content]{padding:20px 23px}
+.av2-root .av2-business [class*="text-muted"],.av2-root .av2-business .ng-muted{color:var(--av2-muted)}
+.av2-root .av2-business input:not([type=checkbox]):not([type=radio]),.av2-root .av2-business select,.av2-root .av2-business textarea,.av2-root [data-slot=sheet-content] input:not([type=checkbox]):not([type=radio]),.av2-root [data-slot=sheet-content] select,.av2-root [data-slot=sheet-content] textarea{font:inherit;min-width:0;max-width:100%;border:1px solid var(--av2-line);border-radius:8px;background:var(--av2-subtle);color:var(--av2-ink);min-height:40px;box-shadow:none}
+.av2-root .av2-business input[type=checkbox],.av2-root .av2-business input[type=radio]{accent-color:var(--av2-accent)}
+.av2-root .av2-business button,.av2-root [data-slot=sheet-content] button{border-radius:8px;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px}
+.av2-root .av2-business button[class*="bg-[#274f3a]"],.av2-root .av2-business .ng-button:not(.outline),.av2-root [data-slot=sheet-content] button[class*="bg-[#274f3a]"]{background:var(--av2-accent);border-color:var(--av2-accent);color:var(--av2-surface)}
+.av2-root .av2-business button[class*="border-black"],.av2-root .av2-business .ng-button.outline{border-color:var(--av2-line);background:var(--av2-surface);color:var(--av2-ink)}
+.av2-root .av2-business button:hover:not(:disabled){filter:brightness(.97)}
+.av2-root .av2-business button:disabled{cursor:not-allowed;opacity:.5}
+.av2-root .av2-business .overflow-x-auto{max-width:100%;overscroll-behavior-x:contain;border-radius:9px;scrollbar-width:thin}
+.av2-root .av2-business table{font-size:12px;border-collapse:collapse}
+.av2-root .av2-business table th{font-size:10px;font-weight:600;color:var(--av2-muted);background:var(--av2-subtle);text-transform:uppercase;letter-spacing:.3px}
+.av2-root .av2-business table th,.av2-root .av2-business table td{padding:14px 15px;border-bottom:1px solid var(--av2-line)}
+.av2-root .av2-business table tr:hover td{background:var(--av2-subtle)}
+.av2-root .av2-business .ng-panel{padding:21px;border:1px solid var(--av2-line);margin:16px 0;min-width:0;overflow-wrap:anywhere}
+.av2-root .av2-business .ng-panel p{margin:8px 0}
+.av2-root .av2-business .ng-form{display:grid;gap:14px;margin-top:16px}
+.av2-root .av2-business .ng-form label{display:grid;gap:7px;font-size:12px}
+.av2-root .av2-business .ng-form input:not([type=checkbox]),.av2-root .av2-business .ng-form select,.av2-root .av2-business .ng-form textarea{padding:10px 12px;width:100%}
+.av2-root .av2-business .ng-checkbox{display:flex!important;align-items:flex-start;gap:9px!important}
+.av2-root .av2-business .ng-button-row{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px;margin:16px 0}
+.av2-root .av2-business .ng-button-row label{display:grid;gap:6px;min-width:0;max-width:100%}
+.av2-root .av2-business .ng-button{padding:10px 15px;min-height:40px;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--av2-line);border-radius:8px;cursor:pointer;font-weight:600}
+.av2-root .av2-business .ng-two-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.av2-root .av2-business .ng-tabs,.av2-root .av2-view-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 22px;padding:5px;background:var(--av2-surface);border:1px solid var(--av2-line);border-radius:10px}
+.av2-root .av2-business .ng-tabs button,.av2-root .av2-view-tabs a{padding:9px 13px;font-size:12px;border:0;border-radius:7px;background:transparent;color:var(--av2-muted)}
+.av2-root .av2-business .ng-tabs button[aria-pressed=true],.av2-root .av2-view-tabs a[aria-current=page]{background:var(--av2-soft);color:var(--av2-accent);font-weight:600}
+.av2-root .av2-business .ng-notice{border-radius:9px;border:1px solid var(--av2-line);background:var(--av2-soft);color:var(--av2-ink);padding:14px 16px;margin:16px 0;overflow-wrap:anywhere}
+.av2-root .av2-business .ng-notice.error{border-color:#fda29b;background:#fff1f0;color:#912018}
+.av2-root .av2-business details{border:1px solid var(--av2-line);border-radius:8px;padding:12px;margin-top:12px;min-width:0}
+.av2-root .av2-business summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--av2-accent)}
+.av2-root .av2-business [class*="border-black"]{border-color:var(--av2-line)}
+.av2-root .av2-business .ng-eyebrow{color:var(--av2-accent);font-size:10px;letter-spacing:1px;font-weight:600}
+.av2-root .av2-loading{padding:35px;border:1px solid var(--av2-line);border-radius:12px;background:var(--av2-surface);color:var(--av2-muted)}
+.av2-root [data-slot=sheet-content]{background:var(--av2-surface);color:var(--av2-ink);border-color:var(--av2-line);padding:26px;max-width:100vw;font-size:13px}
+.av2-root [data-slot=sheet-title]{color:var(--av2-ink);font-size:21px}
+.av2-root [data-slot=sheet-description]{color:var(--av2-muted)}
+.av2-root [data-slot=sheet-overlay]{background:#10182880}
+.av2-root .av2-profile{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;margin:18px 0}
+.av2-root .av2-profile dt{color:var(--av2-muted)}
+.av2-root .av2-profile dd{margin:0;overflow-wrap:anywhere}
+.av2-root .av2-trend{margin:24px 0;padding:23px;background:var(--av2-surface);border:1px solid var(--av2-line);border-radius:12px}
+.av2-root .av2-trend figcaption{font-size:14px;font-weight:600;margin-bottom:20px}
+.av2-root .av2-trend-scroll{max-width:100%;overflow-x:auto}
+.av2-root .av2-trend-bars{display:flex;gap:12px;min-width:max-content;align-items:flex-end}
+.av2-root .av2-trend-column{flex:1;min-width:76px;max-width:140px;text-align:center;font-size:10px;color:var(--av2-muted)}
+.av2-root .av2-trend-track{height:140px;display:flex;align-items:flex-end;justify-content:center;margin:8px 0;border-bottom:1px solid var(--av2-line)}
+.av2-root .av2-trend-track>span{background:var(--av2-accent);width:30px;border-radius:5px 5px 0 0;min-height:1px}
+.av2-root .av2-trend-track>span[data-negative=true]{background:#f79009}
+.av2-root .av2-trend-value{white-space:nowrap;color:var(--av2-ink)}
+.av2-root .av2-trend>p{font-size:11px;color:var(--av2-muted);margin-top:12px}
+.av2-root .av2-business [hidden]{display:none!important}
+@media(max-width:900px){.av2-root .av2-business .ng-two-columns{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:639px){.av2-root .av2-business [data-slot=card-header],.av2-root .av2-business [data-slot=card-content]{padding:16px}.av2-root .av2-business .ng-panel{padding:16px}.av2-root .av2-business .ng-button-row>*{max-width:100%}.av2-root .av2-business [class*="w-60"]{width:100%}.av2-root [data-slot=sheet-content]{padding:20px 16px}.av2-root .av2-business h1{font-size:20px}.av2-root .av2-business p,.av2-root .av2-business label{overflow-wrap:anywhere}.av2-root .av2-business .ng-tabs button,.av2-root .av2-view-tabs a{font-size:11px;padding:8px 10px}}
