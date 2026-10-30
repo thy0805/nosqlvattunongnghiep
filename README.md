@@ -61,3 +61,11 @@ Admin V2 có8 nhóm/40 mục/35screen key; một số mục dùng chung componen
 Không đưa .env thật, credential, cookie/session, state, database, lịch sử QA, runtime, báo cáo Word hoặc workspace .agent lên Git. Các .env.example không chứa mật khẩu thật. Tài khoản/địa chỉ .test trong helper là dữ liệu mẫu công khai, không phải tài khoản thật. Metadata tác giả thư viện trong lockfile được giữ nguyên.
 
 Source gốc và ứng dụng đang chạy được giữ nguyên; repo là bản sao mã nguồn. Các link tới Shop ở Admin và ngược lại vẫn dùng đường dẫn của ứng dụng chung.
+
+## Cập nhật UI Admin V2 — 30/10/2026
+
+Vòng sửa giao diện bổ sung header cố định, tương phản nút Light/Dark, bố cục bảng và biểu mẫu Admin, biểu đồ báo cáo và ma trận vai trò. Thay đổi trong 28 file React/CSS Admin; Laravel, Shop, nghiệp vụ, schema và dependency giữ nguyên.
+
+Build và TypeScript đã đạt tại source; 47/47 handler và hai truy vấn Dashboard được đối chiếu không đổi. Browser kiểm giao diện đại diện 320/768/1366px, theme/sidebar/search/account và login/logout ba vai trò; không phải xác nhận mọi giao dịch ghi hoặc mọi màn đã hoàn thiện.
+
+Tổng quan Shop vẫn còn phần danh sách báo cáo chi tiết chưa đồng bộ giao diện V2. Một số mục điều hướng vẫn hiển thị với tài khoản không có quyền, API tiếp tục kiểm quyền theo chuỗi/chi nhánh. Đây là các giới hạn UI đang chờ xử lý; không nới quyền hoặc đổi nghiệp vụ trong lần cập nhật này.

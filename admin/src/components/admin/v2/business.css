@@ -1,4 +1,4 @@
-.av2-root{--background:var(--av2-canvas);--foreground:var(--av2-ink);--card:var(--av2-surface);--card-foreground:var(--av2-ink);--popover:var(--av2-surface);--popover-foreground:var(--av2-ink);--muted:var(--av2-subtle);--muted-foreground:var(--av2-muted);--primary:var(--av2-accent);--primary-foreground:var(--av2-surface);--border:var(--av2-line);--input:var(--av2-line);--ring:var(--av2-accent)}
+.av2-root{--background:var(--av2-canvas);--foreground:var(--av2-ink);--card:var(--av2-surface);--card-foreground:var(--av2-ink);--popover:var(--av2-surface);--popover-foreground:var(--av2-ink);--muted:var(--av2-subtle);--muted-foreground:var(--av2-muted);--primary:var(--av2-accent);--primary-foreground:var(--av2-primary-ink);--border:var(--av2-line);--input:var(--av2-line);--ring:var(--av2-accent)}
 .av2-root .av2-business{min-width:0;max-width:100%;font-size:13px;line-height:1.65}
 .av2-root .av2-business>main,.av2-root .av2-business>.ng-shop{padding:0;min-width:0;max-width:none;background:transparent;color:var(--av2-ink);margin:0}
 .av2-root .av2-business h1{font-size:21px;letter-spacing:-.4px;line-height:1.4}
@@ -11,7 +11,7 @@
 .av2-root .av2-business input:not([type=checkbox]):not([type=radio]),.av2-root .av2-business select,.av2-root .av2-business textarea,.av2-root [data-slot=sheet-content] input:not([type=checkbox]):not([type=radio]),.av2-root [data-slot=sheet-content] select,.av2-root [data-slot=sheet-content] textarea{font:inherit;min-width:0;max-width:100%;border:1px solid var(--av2-line);border-radius:8px;background:var(--av2-subtle);color:var(--av2-ink);min-height:40px;box-shadow:none}
 .av2-root .av2-business input[type=checkbox],.av2-root .av2-business input[type=radio]{accent-color:var(--av2-accent)}
 .av2-root .av2-business button,.av2-root [data-slot=sheet-content] button{border-radius:8px;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:12px}
-.av2-root .av2-business button[class*="bg-[#274f3a]"],.av2-root .av2-business .ng-button:not(.outline),.av2-root [data-slot=sheet-content] button[class*="bg-[#274f3a]"]{background:var(--av2-accent);border-color:var(--av2-accent);color:var(--av2-surface)}
+.av2-root .av2-business :is(button,a)[class*="bg-[#274f3a]"],.av2-root .av2-business .ng-button:not(.outline),.av2-root [data-slot=sheet-content] :is(button,a)[class*="bg-[#274f3a]"]{background:var(--av2-accent);border-color:var(--av2-accent);color:var(--av2-primary-ink)}
 .av2-root .av2-business button[class*="border-black"],.av2-root .av2-business .ng-button.outline{border-color:var(--av2-line);background:var(--av2-surface);color:var(--av2-ink)}
 .av2-root .av2-business button:hover:not(:disabled){filter:brightness(.97)}
 .av2-root .av2-business button:disabled{cursor:not-allowed;opacity:.5}
@@ -60,3 +60,98 @@
 .av2-root .av2-business [hidden]{display:none!important}
 @media(max-width:900px){.av2-root .av2-business .ng-two-columns{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:639px){.av2-root .av2-business [data-slot=card-header],.av2-root .av2-business [data-slot=card-content]{padding:16px}.av2-root .av2-business .ng-panel{padding:16px}.av2-root .av2-business .ng-button-row>*{max-width:100%}.av2-root .av2-business [class*="w-60"]{width:100%}.av2-root [data-slot=sheet-content]{padding:20px 16px}.av2-root .av2-business h1{font-size:20px}.av2-root .av2-business p,.av2-root .av2-business label{overflow-wrap:anywhere}.av2-root .av2-business .ng-tabs button,.av2-root .av2-view-tabs a{font-size:11px;padding:8px 10px}}
+
+.av2-root .av2-business :is(button,a)[class*="bg-[#274f3a]"]:hover:not(:disabled),.av2-root .av2-business .ng-button:not(.outline):hover:not(:disabled){background:var(--av2-hover);color:var(--av2-primary-ink)}
+.av2-root .av2-business [class*="text-[#274f3a]"]{color:var(--av2-accent)}
+.av2-root .av2-business [class*="bg-[#e1e5d3]"],.av2-root .av2-business [class*="bg-[#e9eadf]"],.av2-root .av2-business [class*="bg-[#f2f3e9]"]{background:var(--av2-soft)}
+.av2-root .av2-business [class*="bg-amber-"],.av2-root [data-slot=sheet-content] [class*="bg-amber-"]{background:#fffaeb;color:#854a0e}
+.av2-root .av2-business [class*="bg-red-"],.av2-root [data-slot=sheet-content] [class*="bg-red-"]{background:#fff1f0;color:#912018}
+.av2-root .av2-business [class*="bg-green-"]{background:var(--av2-soft);color:var(--av2-accent)}
+.av2-root .av2-business :is(button,a)[class*="bg-[#274f3a]"]{color:var(--av2-primary-ink)}
+.av2-root .av2-business [data-slot=card]{padding:0;gap:0;overflow:hidden}
+.av2-root .av2-business [data-slot=card-header]{padding:18px 20px;gap:8px}
+.av2-root .av2-business [data-slot=card-content]{padding:18px 20px}
+.av2-root .av2-business table th,.av2-root .av2-business table td{padding:12px 16px;vertical-align:middle}
+.av2-root .av2-business table td small{display:block;color:var(--av2-muted);font-size:11px;margin-top:4px}
+.av2-root .av2-business table td strong{font-weight:600}
+.av2-root .av2-business table td{height:60px}
+.av2-root .av2-business .av2-legacy-toolbar{justify-content:flex-end;margin-bottom:16px}
+.av2-root .av2-business .av2-legacy-toolbar:empty{display:none}
+.av2-root .av2-business>main>div.av2-legacy-toolbar+section,.av2-root .av2-business>main>div.av2-legacy-toolbar+[data-slot=card]{margin-top:0}
+.av2-root .av2-commerce-scope{padding:14px 18px;border:1px solid var(--av2-line);border-radius:12px;background:var(--av2-surface);justify-content:space-between;margin:0 0 20px!important}
+.av2-root .av2-commerce-scope label{grid-template-columns:auto minmax(120px,250px);align-items:center;gap:12px!important;font-size:12px}
+.av2-root .av2-commerce-scope select{padding:8px 12px}
+.av2-root .av2-business .av2-order-workspace{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+.av2-root .av2-business .av2-order-workspace.has-detail{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.av2-root .av2-order-workspace>div,.av2-root .av2-order-workspace>section{min-width:0}
+.av2-root .av2-order-table{border:1px solid var(--av2-line);border-radius:12px;background:var(--av2-surface)}
+.av2-root .av2-order-table table{width:100%;min-width:820px;text-align:left}
+.av2-root .av2-order-table tr[aria-selected=true] td{background:var(--av2-soft)}
+.av2-root .av2-status{display:inline-flex;align-items:center;max-width:100%;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:500;background:var(--av2-soft);color:var(--av2-accent);line-height:1.5}
+.av2-root td>.av2-status{white-space:nowrap}
+.av2-root .av2-detail-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.av2-root .av2-product-identity{display:flex;gap:11px;align-items:center;min-width:160px}
+.av2-root .av2-product-placeholder{display:grid;place-items:center;width:42px;height:42px;flex-shrink:0;border-radius:9px;border:1px solid var(--av2-line);background:var(--av2-subtle);color:var(--av2-accent)}
+.av2-root .av2-dashboard{display:grid;gap:22px}
+.av2-root .av2-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.av2-root .av2-kpi{min-width:0;border:1px solid var(--av2-line);border-radius:12px;background:var(--av2-surface);padding:20px;position:relative}
+.av2-root .av2-kpi-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--av2-subtle);color:var(--av2-accent);margin-bottom:15px}
+.av2-root .av2-kpi p{color:var(--av2-muted);font-size:12px;margin:0 0 6px}
+.av2-root .av2-kpi strong{display:block;overflow-wrap:anywhere;font-size:27px;font-weight:650;letter-spacing:-.6px;line-height:1.3}
+.av2-root .av2-kpi small{display:block;font-size:10px;color:var(--av2-muted);margin-top:8px}
+.av2-root .av2-dashboard-middle{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(250px,1fr);gap:22px;align-items:start}
+.av2-root .av2-dashboard-middle.inventory-only{grid-template-columns:minmax(0,1fr)}
+.av2-root .av2-dashboard-middle>div{min-width:0}
+.av2-root .av2-dashboard .av2-trend{margin:0}
+.av2-root .av2-stock-summary{display:grid;gap:0;margin:0 0 20px}
+.av2-root .av2-stock-summary>div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid var(--av2-line);padding:12px 0;color:var(--av2-muted)}
+.av2-root .av2-stock-summary strong{font-size:20px;color:var(--av2-ink)}
+.av2-root .av2-data-note{font-size:11px;color:var(--av2-muted);padding:10px 2px 0}
+.av2-root .av2-data-note a{color:var(--av2-accent)}
+.av2-root .av2-table-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+.av2-root .av2-table-toolbar>span{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--av2-muted)}
+.av2-root .av2-line-chart{width:100%;min-width:450px;height:auto;color:var(--av2-accent);overflow:visible}
+.av2-root .av2-chart-grid{stroke:var(--av2-line);stroke-dasharray:4 5}
+.av2-root .av2-chart-baseline{stroke:var(--av2-line)}
+.av2-root .av2-chart-point{fill:var(--av2-surface);stroke:var(--av2-accent);stroke-width:3}
+.av2-root .av2-line-chart text{font:11px "Segoe UI",sans-serif;fill:var(--av2-muted)}
+.av2-root .av2-trend figcaption{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.av2-root .av2-chart-legend{font-size:11px;font-weight:400;color:var(--av2-muted)}
+.av2-root .av2-chart-legend:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--av2-accent);margin-right:7px}
+.av2-root .av2-chart-empty{display:grid;place-items:center;min-height:200px;color:var(--av2-muted)}
+.av2-root .av2-business[data-view=inventory] main>section [data-slot=card-header],.av2-root .av2-business[data-view=reports] section[aria-label="Chỉ tiêu chính"] [data-slot=card-header]{border:0;padding-bottom:10px}
+.av2-root .av2-business[data-view=inventory] main>section [data-slot=card-content],.av2-root .av2-business[data-view=reports] section[aria-label="Chỉ tiêu chính"] [data-slot=card-content]{padding-top:0}
+.av2-root .av2-pos-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(340px,1fr);gap:22px;margin-top:18px;align-items:start}
+.av2-root .av2-pos-products,.av2-root .av2-pos-cart{min-width:0;padding:20px;border:1px solid var(--av2-line);background:var(--av2-surface);border-radius:12px}
+.av2-root .av2-panel-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.av2-root .av2-panel-title>span{font-size:11px;color:var(--av2-muted)}
+.av2-root .av2-pos-cart>p{font-size:11px;color:var(--av2-muted)}
+.av2-root .av2-pos-cart form{margin-top:16px}
+.av2-root .av2-pos-cart form .space-y-5>*+*{margin-top:16px}
+.av2-root .av2-pos-search{display:flex;align-items:center;gap:8px;color:var(--av2-muted);position:relative;margin-bottom:18px}
+.av2-root .av2-pos-search input{width:100%;padding:10px 12px}
+.av2-root .av2-pos-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.av2-root .av2-product-choice{min-width:0;text-align:left;padding:14px;border:1px solid var(--av2-line);background:var(--av2-surface);color:var(--av2-ink);display:flex;flex-direction:column;gap:7px;cursor:pointer}
+.av2-root .av2-product-choice .av2-product-placeholder{height:90px;width:100%;margin-bottom:5px}
+.av2-root .av2-product-choice strong{font-size:13px;font-weight:600}
+.av2-root .av2-product-choice b{font-size:15px;color:var(--av2-accent)}
+.av2-root .av2-product-choice small{font-size:10px;color:var(--av2-muted)}
+.av2-root .av2-product-choice:focus-visible{outline:2px solid var(--av2-accent);outline-offset:2px}
+.av2-root .av2-role-workspace{display:grid;gap:22px}
+.av2-root .av2-role-note{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--av2-muted)}
+.av2-root .av2-permission{font-size:12px;color:var(--av2-accent)}
+.av2-root .av2-muted{color:var(--av2-muted)}
+.av2-root .av2-role-workspace table th[scope=row]{text-transform:none;letter-spacing:0;background:transparent;color:var(--av2-ink);font-size:12px;min-width:190px}
+.av2-root .av2-business[data-view=tickets] .ng-two-columns,.av2-root .av2-business[data-view=ticket] .ng-two-columns,.av2-root .av2-business[data-view=chat] .ng-two-columns{grid-template-columns:minmax(230px,.8fr) minmax(0,1.5fr)}
+.av2-root .av2-business[data-view=b2b]>.ng-commerce>section,.av2-root .av2-business[data-view=quotes]>.ng-commerce>section{padding:20px;border:1px solid var(--av2-line);border-radius:12px;background:var(--av2-surface)}
+.av2-root .av2-business[data-view=customers] [data-slot=card-header]{align-items:center}
+@media(max-width:1100px){.av2-root .av2-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.av2-root .av2-dashboard-middle{grid-template-columns:minmax(0,1fr)}.av2-root .av2-pos-layout{grid-template-columns:minmax(0,1fr)}.av2-root .av2-business .av2-order-workspace.has-detail{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:767px){.av2-root .av2-business[data-view=tickets] .ng-two-columns,.av2-root .av2-business[data-view=ticket] .ng-two-columns,.av2-root .av2-business[data-view=chat] .ng-two-columns{grid-template-columns:minmax(0,1fr)}.av2-root .av2-commerce-scope label{grid-template-columns:minmax(0,1fr);width:100%}.av2-root .av2-business [data-slot=card-header],.av2-root .av2-business [data-slot=card-content]{padding:16px}.av2-root .av2-pos-cart,.av2-root .av2-pos-products{padding:16px}}
+@media(max-width:479px){.av2-root .av2-kpi-grid{grid-template-columns:minmax(0,1fr);gap:12px}.av2-root .av2-kpi{padding:16px}.av2-root .av2-kpi-icon{float:right;margin:0}.av2-root .av2-kpi strong{font-size:24px}.av2-root .av2-table-toolbar{align-items:flex-start;flex-direction:column}.av2-root .av2-pos-grid{grid-template-columns:minmax(0,1fr)}.av2-root .av2-profile{grid-template-columns:minmax(0,1fr);gap:5px}.av2-root .av2-profile dd{margin-bottom:12px}}
+.av2-root p.av2-notice{display:block}
+.av2-root .av2-role-workspace .av2-table{min-width:740px}
+.av2-root .av2-business .ng-button.outline{outline:0}
+.av2-root .av2-business .ng-button.outline:focus-visible{outline:2px solid var(--av2-accent);outline-offset:2px}
+.av2-root .av2-business:is([data-view=tickets],[data-view=ticket],[data-view=chat]) .ng-two-columns>div{min-width:0;padding:20px;border:1px solid var(--av2-line);background:var(--av2-surface);border-radius:12px;min-height:220px}
+.av2-root .av2-business:is([data-view=tickets],[data-view=ticket],[data-view=chat]) .ng-section>h2{margin:0 0 16px}
+.av2-root .av2-business:is([data-view=tickets],[data-view=ticket],[data-view=chat]) .ng-two-columns>div>.ng-button-row:first-child{margin-top:0}

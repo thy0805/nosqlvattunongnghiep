@@ -1,3 +1,4 @@
+import { DashboardOverview, type DashboardReport } from "@/components/admin/v2/dashboard-overview"
 import { nosqlServerApiUrl } from "@/lib/server-origin"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
@@ -22,7 +23,7 @@ type ReportSummary = {
   incomplete_tax_count: number
   invoice_mismatch_count: number
 }
-type SalesReport = { summary: ReportSummary }
+type SalesReport = DashboardReport
 const money = (value: string | null) => {
   if (value === null) return "Chưa đủ dữ liệu"
   return formatVnd(value)
@@ -77,7 +78,7 @@ async function reportOverview(): Promise<SalesReport | "forbidden" | "multi_chai
   }
 }
 
-export default async function AdminPage() {
+export async function AdminDashboardContent({ embedded = false }: { embedded?: boolean }) {
   const [inventory, report] = await Promise.all([inventoryOverview(), reportOverview()])
   const metrics = inventory ? [
     { label: "Dòng tồn kho", value: inventory.summary.inventory_rows, icon: Boxes },
@@ -90,6 +91,8 @@ export default async function AdminPage() {
     { label: "Tiền đã thu", value: report.summary.amount_collected, icon: Wallet },
     { label: "Còn phải thu", value: report.summary.receivable_remaining, icon: ReceiptText },
   ] : []
+
+  if (embedded) return <DashboardOverview inventory={inventory} report={report} />
 
   return (
     <main className="p-5 lg:p-8">
@@ -120,3 +123,5 @@ export default async function AdminPage() {
     </main>
   )
 }
+
+export default async function AdminPage() { return <AdminDashboardContent /> }

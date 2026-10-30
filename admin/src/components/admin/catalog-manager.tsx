@@ -1,5 +1,6 @@
 "use client"
 
+import { CatalogTools } from "./v2/catalog-tools"
 import { useState } from "react"
 import { useAdminV2View } from "./v2/view-context"
 import { Pencil, Plus } from "lucide-react"
@@ -109,7 +110,7 @@ export function CatalogManager({ source, onSaved }: { source: CatalogResponse; o
 
   return (
     <>
-      <section className="mt-6 rounded-2xl border border-black/8 bg-[#fbfaf5] p-5">
+      <CatalogTools><section className="mt-6 rounded-2xl border border-black/8 bg-[#fbfaf5] p-5">
         <div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="font-semibold">Quản lý danh mục chung</h2><p className="mt-1 text-sm text-muted-foreground">Chỉ tài khoản Chủ chuỗi được chỉ định mới thay đổi dữ liệu này.</p></div><div className="flex flex-wrap gap-2">{(["category", "unit", "product"] as Kind[]).map((value) => <button key={value} type="button" onClick={() => begin(value)} className="inline-flex min-h-10 items-center gap-2 rounded-full border border-black/10 bg-white px-4 text-sm font-semibold hover:bg-[#e9eadf]"><Plus className="size-4" />Thêm {labels[value]}</button>)}</div></div>
         <div className="mt-5 grid gap-4 lg:grid-cols-2">
           <div><h3 className="text-sm font-semibold">Nhóm vật tư</h3><div className="mt-2 flex flex-wrap gap-2">{source.categories.map((category) => <button key={category.id} type="button" onClick={() => begin("category", category)} className="inline-flex min-h-9 items-center gap-2 rounded-full border border-black/10 bg-white px-3 text-xs hover:bg-[#e9eadf]"><Pencil className="size-3" />{category.name}{!category.is_active && <span className="text-red-700">Đã ngừng</span>}</button>)}</div></div>
@@ -117,7 +118,7 @@ export function CatalogManager({ source, onSaved }: { source: CatalogResponse; o
         </div>
         <div className="mt-4"><h3 className="text-sm font-semibold">Vật tư trên trang hiện tại</h3><div className="mt-2 flex flex-wrap gap-2">{source.data.map((product) => <button key={product.id} type="button" onClick={() => begin("product", product)} className="inline-flex min-h-9 items-center gap-2 rounded-full border border-black/10 bg-white px-3 text-xs hover:bg-[#e9eadf]"><Pencil className="size-3" />{product.name}{!product.is_active && <span className="text-red-700">Đã ngừng</span>}</button>)}</div></div>
         {success && <p role="status" className="mt-3 text-sm text-green-800">{success}</p>}
-      </section>
+      </section></CatalogTools>
 
       <Sheet open={open} onOpenChange={(value) => { if (!saving) setOpen(value) }}>
         <SheetContent side="right" className="data-[side=right]:w-full data-[side=right]:sm:w-[32rem] data-[side=right]:sm:max-w-none overflow-y-auto bg-[#fbfaf5] p-6">

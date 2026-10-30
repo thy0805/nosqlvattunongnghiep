@@ -1,5 +1,7 @@
 "use client"
 
+import { LegacyPageIntro } from "@/components/admin/v2/legacy-page-intro"
+
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Building2, RotateCw, Warehouse } from "lucide-react"
@@ -41,7 +43,7 @@ export default function OrganizationPage() {
 
   return (
     <main className="p-5 lg:p-8">
-      <div><p className="text-sm font-medium text-primary">Cơ cấu được phân quyền</p><h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Chuỗi, chi nhánh và kho</h1><p className="mt-2 text-sm text-muted-foreground">Thông tin tổ chức trong phạm vi tài khoản của bạn.</p></div>
+      <LegacyPageIntro><p className="text-sm font-medium text-primary">Cơ cấu được phân quyền</p><h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Chuỗi, chi nhánh và kho</h1><p className="mt-2 text-sm text-muted-foreground">Thông tin tổ chức trong phạm vi tài khoản của bạn.</p></LegacyPageIntro>
       {error && <div role="alert" className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"><span>{error}</span><button type="button" onClick={() => setReload((value) => value + 1)} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-red-300 px-3 font-semibold hover:bg-red-100"><RotateCw className="size-4" />Thử lại</button></div>}
       {loading && <div role="status" className="mt-7 space-y-4"><span className="sr-only">Đang tải tổ chức</span><Skeleton className="h-28 w-full rounded-2xl" /><Skeleton className="h-52 w-full rounded-2xl" /></div>}
       {!loading && data && <>

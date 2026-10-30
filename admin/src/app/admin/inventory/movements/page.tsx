@@ -1,5 +1,7 @@
 "use client"
 
+import { LegacyPageIntro } from "@/components/admin/v2/legacy-page-intro"
+
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -85,11 +87,11 @@ export default function InventoryMovementsPage() {
 
   return <main className="p-5 lg:p-8">
     <Link href="/admin/inventory" className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-primary hover:underline"><ArrowLeft className="size-4" />Tồn kho theo lô</Link>
-    <div className="mt-4">
+    <LegacyPageIntro className="mt-4">
       <p className="text-sm font-medium text-primary">Nhật ký kho hàng</p>
       <h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Lịch sử biến động</h1>
       <p className="mt-2 text-sm text-muted-foreground">Mỗi dòng ghi nhận một lần nhập, bán hoặc điều chuyển tại kho được phân quyền. Số dương là nhập kho, số âm là xuất kho.</p>
-    </div>
+    </LegacyPageIntro>
     {error && <div role="alert" className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"><span>{error}</span><button type="button" onClick={() => setReload((value) => value + 1)} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-red-300 px-3 font-semibold hover:bg-red-100"><RotateCw className="size-4" />Thử lại</button></div>}
     <Card className="mt-7 border-black/8 bg-[#fbfaf5] shadow-none">
       <CardHeader className="gap-4 lg:flex-row lg:items-center lg:justify-between">

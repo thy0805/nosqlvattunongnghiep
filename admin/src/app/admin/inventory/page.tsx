@@ -1,5 +1,7 @@
 "use client"
 
+import { LegacyPageIntro } from "@/components/admin/v2/legacy-page-intro"
+
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -94,12 +96,12 @@ export default function InventoryPage() {
 
   return (
     <main className="p-5 lg:p-8">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
+      <div className="av2-legacy-toolbar flex flex-wrap items-end justify-between gap-4">
+        <LegacyPageIntro>
         <p className="text-sm font-medium text-primary">Quản lý kho hàng</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Tồn kho theo lô</h1>
         <p className="mt-2 text-sm text-muted-foreground">Theo dõi số lượng và hạn dùng tại các kho bạn được phân quyền.</p>
-        </div>
+        </LegacyPageIntro>
         <Link href="/admin/inventory/movements" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-black/10 bg-white px-4 text-sm font-semibold hover:bg-[#e9eadf]">Lịch sử biến động <ArrowRight className="size-4" /></Link>
       </div>
 

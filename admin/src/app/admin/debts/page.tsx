@@ -1,5 +1,7 @@
 "use client"
 
+import { LegacyPageIntro } from "@/components/admin/v2/legacy-page-intro"
+
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { HandCoins, RotateCw } from "lucide-react"
@@ -95,7 +97,7 @@ export default function DebtsPage() {
   }
 
   return <main className="p-5 lg:p-8">
-    <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-sm font-medium text-primary">Sổ công nợ</p><h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Phải thu & phải trả</h1><p className="mt-2 text-sm text-muted-foreground">Mỗi khoản gắn hóa đơn bán hoặc phiếu nhập đã duyệt. Số dư được tính từ các lần thu, chi thực tế.</p></div><button type="button" onClick={() => setReload((value) => value + 1)} disabled={loading} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-black/10 px-4 text-sm font-semibold disabled:opacity-50"><RotateCw className="size-4" />Tải lại</button></div>
+    <div className="av2-legacy-toolbar flex flex-wrap items-end justify-between gap-4"><LegacyPageIntro><p className="text-sm font-medium text-primary">Sổ công nợ</p><h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Phải thu & phải trả</h1><p className="mt-2 text-sm text-muted-foreground">Mỗi khoản gắn hóa đơn bán hoặc phiếu nhập đã duyệt. Số dư được tính từ các lần thu, chi thực tế.</p></LegacyPageIntro><button type="button" onClick={() => setReload((value) => value + 1)} disabled={loading} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-black/10 px-4 text-sm font-semibold disabled:opacity-50"><RotateCw className="size-4" />Tải lại</button></div>
     {success && <p role="status" className="mt-6 rounded-xl bg-green-50 px-4 py-3 text-sm text-green-900">{success}</p>}
     {error && <p role="alert" className="mt-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-900">{error}</p>}
     <Card className="mt-7 border-black/8 bg-[#fbfaf5] shadow-none"><CardHeader><CardTitle className="text-lg">Khoản phát sinh theo chứng từ</CardTitle></CardHeader><CardContent>

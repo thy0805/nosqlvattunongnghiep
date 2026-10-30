@@ -1,5 +1,7 @@
 "use client"
 
+import { LegacyPageIntro } from "@/components/admin/v2/legacy-page-intro"
+
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { AlertTriangle, CalendarClock, RotateCw, Settings2 } from "lucide-react"
@@ -85,7 +87,7 @@ export default function AlertsPage() {
   }
 
   return <main className="p-5 lg:p-8">
-    <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-sm font-medium text-primary">Kiểm soát tồn kho</p><h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Cảnh báo kho hàng</h1><p className="mt-2 text-sm text-muted-foreground">Tồn thấp theo kho và vật tư; cận hạn theo từng lô. Ngày kiểm tra do máy chủ xác định theo giờ Việt Nam.</p></div><button type="button" onClick={() => setReload((value) => value + 1)} disabled={loading} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-black/10 bg-white px-4 text-sm font-semibold hover:bg-[#e9eadf] disabled:opacity-50"><RotateCw className="size-4" />Làm mới</button></div>
+    <div className="av2-legacy-toolbar flex flex-wrap items-end justify-between gap-4"><LegacyPageIntro><p className="text-sm font-medium text-primary">Kiểm soát tồn kho</p><h1 className="mt-2 text-3xl font-semibold tracking-[-0.045em]">Cảnh báo kho hàng</h1><p className="mt-2 text-sm text-muted-foreground">Tồn thấp theo kho và vật tư; cận hạn theo từng lô. Ngày kiểm tra do máy chủ xác định theo giờ Việt Nam.</p></LegacyPageIntro><button type="button" onClick={() => setReload((value) => value + 1)} disabled={loading} className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-black/10 bg-white px-4 text-sm font-semibold hover:bg-[#e9eadf] disabled:opacity-50"><RotateCw className="size-4" />Làm mới</button></div>
     {error && <div role="alert" className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">{error}</div>}
     {success && <div role="status" className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">{success}</div>}
     <NotificationPanel />
