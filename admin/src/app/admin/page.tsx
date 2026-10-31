@@ -1,3 +1,5 @@
+import { runtimeEnvironment } from "@/lib/runtime-environment"
+import { dashboardInsights } from "@/lib/dashboard-insights"
 import { DashboardOverview, type DashboardReport } from "@/components/admin/v2/dashboard-overview"
 import { nosqlServerApiUrl } from "@/lib/server-origin"
 import { cookies } from "next/headers"
@@ -30,15 +32,15 @@ const money = (value: string | null) => {
 }
 
 async function inventoryOverview(): Promise<InventoryResponse | null> {
-  const session = (await cookies()).get("nosql186_api_session")
+  const session = (await cookies()).get(runtimeEnvironment().sessionCookie)
   if (!session) redirect("/login")
   let response: Response
   try {
     response = await fetch(`${nosqlServerApiUrl()}/api/inventory?per_page=5`, {
       headers: {
         Accept: "application/json",
-        Origin: "http://nosql.localhost:3310",
-        Cookie: `nosql186_api_session=${encodeURIComponent(session.value)}`,
+        Origin: runtimeEnvironment().web,
+        Cookie: `${runtimeEnvironment().sessionCookie}=${encodeURIComponent(session.value)}`,
       },
       cache: "no-store",
     })
@@ -51,13 +53,13 @@ async function inventoryOverview(): Promise<InventoryResponse | null> {
 }
 
 async function reportOverview(): Promise<SalesReport | "forbidden" | "multi_chain" | null> {
-  const session = (await cookies()).get("nosql186_api_session")
+  const session = (await cookies()).get(runtimeEnvironment().sessionCookie)
   if (!session) redirect("/login")
   try {
     const headers = {
       Accept: "application/json",
-      Origin: "http://nosql.localhost:3310",
-      Cookie: `nosql186_api_session=${encodeURIComponent(session.value)}`,
+      Origin: runtimeEnvironment().web,
+      Cookie: `${runtimeEnvironment().sessionCookie}=${encodeURIComponent(session.value)}`,
     }
     const profileResponse = await fetch(`${nosqlServerApiUrl()}/api/me`, { headers, cache: "no-store" })
     if (profileResponse.status === 401) redirect("/login")
@@ -92,7 +94,7 @@ export async function AdminDashboardContent({ embedded = false }: { embedded?: b
     { label: "Còn phải thu", value: report.summary.receivable_remaining, icon: ReceiptText },
   ] : []
 
-  if (embedded) return <DashboardOverview inventory={inventory} report={report} />
+  if (embedded) return <DashboardOverview inventory={inventory} report={report} insights={await dashboardInsights()} />
 
   return (
     <main className="p-5 lg:p-8">

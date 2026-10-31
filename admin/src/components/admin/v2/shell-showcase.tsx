@@ -9,7 +9,7 @@ import { AdminCard, AdminField, AdminFormShell, AdminIcon, AdminTable } from "./
 export function ShellShowcase({ screen, tab }: { screen: string; tab: string }) {
   const profile = useAdminProfile()
   const current = findDestination(screen, tab)
-  const allowed = destinationAllowed(screen, profile)
+  const allowed = destinationAllowed(screen, profile, tab)
   const legacy = legacyDestinations[screen]
   if (!current) return <AdminCard title="Không tìm thấy mục điều hướng"><p>Liên kết không thuộc 40 mục Admin V2.</p><Link className="av2-button" href="/admin/v2">Về tổng quan V2</Link></AdminCard>
   if (!allowed) return <AdminCard title="Không có quyền truy cập"><p role="alert">Tài khoản hiện tại không có quyền mở mục này. Quyền vẫn theo hồ sơ và API hiện hành.</p><Link className="av2-button" href="/admin/v2">Về tổng quan V2</Link></AdminCard>

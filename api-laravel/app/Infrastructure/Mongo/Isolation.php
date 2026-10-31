@@ -15,6 +15,16 @@ final class Isolation
         if ($database !== 'nosql186_web_dev' && !preg_match('/^nosql186_web_test_[a-z0-9_]{8,48}$/D', $database)) {
             $reject();
         }
+        $qa = ($settings['app_url'] ?? '') === 'http://localhost:8020';
+        $qaDatabase = 'nosql186_web_test_agrovia_20261030_qa';
+        $web = $qa ? 'http://localhost:3320' : 'http://nosql.localhost:3310';
+        $cookie = $qa ? 'nosql186_qa_api_session' : 'nosql186_api_session';
+        if (($qa && $database !== $qaDatabase) || (!$qa && $database === $qaDatabase)) {
+            $reject();
+        }
+        if ($qa && str_replace('\\', '/', $settings['session_files'] ?? '') !== 'C:/Hoctap/NoSQL/QA/agrovia-phase3-20261030/api-laravel/storage/framework/sessions') {
+            $reject();
+        }
         $uri = $settings['uri'] ?? '';
         if (!is_string($uri) || !preg_match('~^mongodb://[^/]+/[^/?]+\?[^#]+$~D', $uri)) {
             $reject();
@@ -36,9 +46,9 @@ final class Isolation
             || strlen(rawurldecode($parts['pass'])) < 32
             || ($settings['connection'] ?? '') !== 'mongodb'
             || ($settings['replica_set'] ?? '') !== 'nosql186_rs'
-            || ($settings['app_url'] ?? '') !== 'http://nosql.localhost:8010'
-            || ($settings['web_origin'] ?? '') !== 'http://nosql.localhost:3310'
-            || ($settings['session_cookie'] ?? '') !== 'nosql186_api_session'
+            || ($settings['app_url'] ?? '') !== ($qa ? 'http://localhost:8020' : 'http://nosql.localhost:8010')
+            || ($settings['web_origin'] ?? '') !== $web
+            || ($settings['session_cookie'] ?? '') !== $cookie
             || ($settings['session_driver'] ?? '') !== 'file'
             || !in_array($settings['session_domain'] ?? null, [null, '', 'null'], true)
             || ($settings['cache_store'] ?? '') !== 'file'

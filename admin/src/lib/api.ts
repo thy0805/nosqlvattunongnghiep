@@ -1,5 +1,6 @@
-export const apiUrl = process.env.NEXT_PUBLIC_API_URL
-if (apiUrl !== "http://nosql.localhost:8010") throw new Error("NOSQL_API_ORIGIN_REJECTED")
+import { runtimeEnvironment } from "./runtime-environment"
+
+export const apiUrl = runtimeEnvironment().api
 
 export class ApiError extends Error {
   constructor(message: string, public status: number) {
@@ -105,6 +106,8 @@ export type InventoryResponse = {
 }
 
 export type CatalogProduct = {
+  shop_images?: { chain_id: string; images: string[] }[]
+  shop_details?: { chain_id: string; chain_name: string; can_manage: boolean; slug: string; published: boolean; brand?: string; origin?: string; packaging?: string; description?: string; uses?: string; instructions?: string; storage?: string; safety?: string }[]
   id: string
   code: string
   name: string

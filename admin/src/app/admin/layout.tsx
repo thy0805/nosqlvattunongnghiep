@@ -1,3 +1,4 @@
+import { runtimeEnvironment } from "@/lib/runtime-environment"
 import { nosqlServerApiUrl } from "@/lib/server-origin"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
@@ -6,7 +7,7 @@ import { NotificationFeedProvider } from "@/components/admin/notification-feed"
 import type { Profile } from "@/lib/api"
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const session = (await cookies()).get("nosql186_api_session")
+  const session = (await cookies()).get(runtimeEnvironment().sessionCookie)
   if (!session) redirect("/login")
 
   let response: Response
@@ -15,8 +16,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     response = await fetch(`${nosqlServerApiUrl()}/api/me`, {
       headers: {
         Accept: "application/json",
-        Origin: "http://nosql.localhost:3310",
-        Cookie: `nosql186_api_session=${encodeURIComponent(session.value)}`,
+        Origin: runtimeEnvironment().web,
+        Cookie: `${runtimeEnvironment().sessionCookie}=${encodeURIComponent(session.value)}`,
       },
       cache: "no-store",
     })

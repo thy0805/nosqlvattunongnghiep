@@ -134,3 +134,7 @@
 @media(max-width:639px){.av2-root .av2-account-toggle{display:flex;gap:4px}.av2-root .av2-account-toggle .av2-avatar{width:30px;height:30px}.av2-root .av2-account-toggle>svg{width:12px}.av2-root .av2-account-menu{position:fixed;top:62px;right:16px;left:auto;width:245px}}
 
 @media(max-width:1200px){.av2-root .av2-account-toggle>span:not(.av2-avatar){display:none}}
+
+.av2-root .av2-nav-items:not([hidden]){animation:av2-menu-enter .16s ease-out}
+.av2-root .av2-nav-chevron{transition:transform .16s ease-out}
+@keyframes av2-menu-enter{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}

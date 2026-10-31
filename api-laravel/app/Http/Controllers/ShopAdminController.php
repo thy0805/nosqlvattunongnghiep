@@ -34,6 +34,10 @@ final class ShopAdminController extends Controller
         abort_unless($this->catalog->find('products',$productId),404);
         $d=$r->validate(['slug'=>'required|string|max:180|regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/','published'=>'required|boolean','brand'=>'nullable|string|max:120','origin'=>'nullable|string|max:120','packaging'=>'nullable|string|max:160','description'=>'nullable|string|max:5000','uses'=>'nullable|string|max:3000','instructions'=>'nullable|string|max:5000','storage'=>'nullable|string|max:3000','safety'=>'nullable|string|max:3000','images'=>'present|array|max:10','images.*'=>'string|max:600']);
         foreach($d['images'] as $url)if(!preg_match('~^/(?!/)[A-Za-z0-9/_.,%\-]+$|^https://[^\s<>]+$~D',$url))throw ValidationException::withMessages(['images'=>'Ảnh phải là đường dẫn nội bộ hoặc HTTPS hợp lệ.']);
+        foreach($d['images'] as $url)if(str_starts_with($url,'/api/shop-product-images/')){
+            $parts=explode('/', $url);
+            abort_unless(count($parts)===5&&$parts[3]===$chainId&&is_file(ShopProductImageController::imagePath($chainId,$parts[4])),422);
+        }
         $row=$this->s->transaction(function()use($r,$chainId,$productId,$d){
             $this->s->admin($r,$chainId,null,true);
             $collision=$this->s->first('shop_products',['chain_id'=>$chainId,'slug'=>$d['slug']]);if($collision&&$collision['product_id']!==$productId)throw ValidationException::withMessages(['slug'=>'Đường dẫn sản phẩm đã được sử dụng.']);

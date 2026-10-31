@@ -49,7 +49,7 @@ export function BusinessWorkspace({ screen, tab, dashboard }: { screen: string; 
   const profile = useAdminProfile()
   const router = useRouter()
   const current = findDestination(screen, tab)
-  if (!current || !destinationAllowed(screen, profile)) return <ShellShowcase screen={screen} tab={tab} />
+  if (!current || !destinationAllowed(screen, profile, tab)) return <ShellShowcase screen={screen} tab={tab} />
 
   function changeCommerceTab(nextTab: string, chain: string) {
     const params = new URLSearchParams(`screen=${commerceDestinations[nextTab] ?? "orders"}`)
@@ -57,7 +57,7 @@ export function BusinessWorkspace({ screen, tab, dashboard }: { screen: string; 
     router.push(`/admin/v2?${params}`)
   }
 
-  const commerce = (initialTab: string) => <Commerce initialTab={initialTab} onTabChange={changeCommerceTab} orderView={screen === "after-sales" ? "cancel" : screen === "delivery" ? tab === "cod" ? "cod" : "delivery" : "orders"} marketingKind={screen === "vouchers" ? "vouchers" : "campaigns"} moderationKind={screen === "questions" ? "questions" : "reviews"} businessSection={screen === "quotes" ? "quotes" : tab === "prices" ? "prices" : "dealers"} />
+  const commerce = (initialTab: string) => <Commerce key={`${screen}:${tab}`} initialTab={initialTab} onTabChange={changeCommerceTab} orderView={screen === "after-sales" ? "cancel" : screen === "delivery" ? tab === "cod" ? "cod" : "delivery" : "orders"} marketingKind={screen === "vouchers" ? "vouchers" : "campaigns"} moderationKind={screen === "questions" ? "questions" : "reviews"} businessSection={screen === "quotes" ? "quotes" : tab === "prices" ? "prices" : "dealers"} />
 
   let content: ReactNode
   switch (screen) {

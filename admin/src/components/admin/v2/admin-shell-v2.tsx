@@ -26,7 +26,7 @@ export function AdminShellV2({ profile, children }: { profile: Profile; children
   const [drawer, setDrawer] = useState(false)
   const [portalContainer, setPortalContainer] = useState<HTMLDivElement | null>(null)
   const [mobile, setMobile] = useState(false)
-  const [groups, setGroups] = useState<Record<string, boolean>>({})
+  const [openGroupKey, setOpenGroupKey] = useState<string | null>(() => current?.group.key ?? null)
   const [query, setQuery] = useState("")
   const [searchOpen, setSearchOpen] = useState(false)
   const [bellOpen, setBellOpen] = useState(false)
@@ -42,6 +42,10 @@ export function AdminShellV2({ profile, children }: { profile: Profile; children
   const { result, loading, error } = useNotificationFeed()
   const unread = result?.unread_count ?? 0
   const matches = adminSections.flatMap(group => group.items.map(item => ({ group, item }))).filter(({ item }) => item.label.toLocaleLowerCase("vi").normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query.trim().toLocaleLowerCase("vi").normalize("NFD").replace(/[\u0300-\u036f]/g, "")))
+
+  useEffect(() => {
+    setOpenGroupKey(findDestination(screen, tab)?.group.key ?? null)
+  }, [screen, tab])
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 1023px)")
@@ -122,13 +126,13 @@ export function AdminShellV2({ profile, children }: { profile: Profile; children
       <div className="av2-nav-label">KHÔNG GIAN QUẢN TRỊ <span>V2</span></div>
       <nav aria-label="Điều hướng Admin V2" className="av2-nav">
         {adminSections.map(group => <section className="av2-nav-group" key={group.key}>
-          <button className={`av2-nav-parent ${current?.group.key === group.key ? "av2-parent-current" : ""}`} title={group.label} aria-expanded={!mobile && collapsed ? false : groups[group.key] !== false} aria-controls={`av2-group-${group.key}`} onClick={() => { if (collapsed && !mobile) setCollapsed(false); setGroups(value => ({ ...value, [group.key]: collapsed && !mobile ? true : value[group.key] === false })) }}>
+          <button className={`av2-nav-parent ${current?.group.key === group.key ? "av2-parent-current" : ""}`} title={group.label} aria-expanded={!mobile && collapsed ? false : openGroupKey === group.key} aria-controls={`av2-group-${group.key}`} onClick={() => { if (collapsed && !mobile) setCollapsed(false); setOpenGroupKey(value => collapsed && !mobile ? group.key : value === group.key ? null : group.key) }}>
             <AdminIcon name={group.icon} /><span className="av2-nav-text">{group.label}</span><ChevronDown size={15} className="av2-nav-chevron" />
           </button>
-          <div className="av2-nav-items" id={`av2-group-${group.key}`} hidden={groups[group.key] === false}>
+          <div className="av2-nav-items" id={`av2-group-${group.key}`} hidden={openGroupKey !== group.key}>
             {group.items.map(item => {
-              const active = item.screen === screen && (item.tab ?? "") === tab
-              const allowed = destinationAllowed(item.screen, profile)
+              const active = (item.screen === screen && (item.tab ?? "") === tab) || (item.screen === "products" && ["product-form", "categories"].includes(screen))
+              const allowed = destinationAllowed(item.screen, profile, item.tab)
               return allowed ? <Link prefetch={false} key={item.label} href={destinationHref(item)} className={`av2-nav-item ${active ? "av2-active" : ""}`} aria-current={active ? "page" : undefined} onClick={closeNavigation}><span>{item.label}</span>{active && <span className="av2-active-dot" />}</Link> : <span className="av2-nav-item av2-restricted" key={item.label} aria-disabled="true" title="Ngoài quyền tài khoản hiện tại"><span>{item.label}</span><span className="av2-lock-label">Khóa</span></span>
             })}
           </div>
@@ -140,7 +144,7 @@ export function AdminShellV2({ profile, children }: { profile: Profile; children
       <header className="av2-topbar">
         <button ref={menuButton} type="button" className="av2-icon-button av2-menu-button" aria-label="Thu gọn hoặc mở menu" aria-controls="av2-sidebar" aria-expanded={mobile ? drawer : !collapsed} onClick={() => { if (mobile) setDrawer(value => !value); else setCollapsed(value => !value) }}><Menu size={21} /></button>
         <div ref={searchArea} className="av2-search"><Search size={19} /><input ref={search} value={query} onChange={event => { setQuery(event.target.value); setSearchOpen(true) }} onFocus={() => setSearchOpen(true)} aria-label="Tìm menu quản trị" aria-expanded={searchOpen} aria-controls="av2-search-results" placeholder="Tìm trang quản trị..." onKeyDown={event => { if (event.key === "Escape") setSearchOpen(false) }} /><kbd>Ctrl K</kbd>
-          {searchOpen && <div id="av2-search-results" className="av2-search-results"><p>{query ? `${matches.length} mục phù hợp` : "Điều hướng nhanh"}</p>{matches.length ? matches.map(({ group, item }) => destinationAllowed(item.screen, profile) ? <Link prefetch={false} key={item.label} href={destinationHref(item)} onClick={closeNavigation}><AdminIcon name={group.icon} size={16} /><span>{item.label}<small>{group.label}</small></span><ChevronRight size={15} /></Link> : <div key={item.label} className="av2-search-restricted">{item.label}<small>Không có quyền truy cập</small></div>) : <div className="av2-search-empty">Không tìm thấy. Thử tên mục khác.</div>}</div>}
+          {searchOpen && <div id="av2-search-results" className="av2-search-results"><p>{query ? `${matches.length} mục phù hợp` : "Điều hướng nhanh"}</p>{matches.length ? matches.map(({ group, item }) => destinationAllowed(item.screen, profile, item.tab) ? <Link prefetch={false} key={item.label} href={destinationHref(item)} onClick={closeNavigation}><AdminIcon name={group.icon} size={16} /><span>{item.label}<small>{group.label}</small></span><ChevronRight size={15} /></Link> : <div key={item.label} className="av2-search-restricted">{item.label}<small>Không có quyền truy cập</small></div>) : <div className="av2-search-empty">Không tìm thấy. Thử tên mục khác.</div>}</div>}
         </div>
         <div className="av2-header-actions"><div className="av2-style-switch" aria-label="Phong cách Admin V2"><button aria-pressed={style === "classic"} onClick={() => setStyle("classic")}>Classic</button><button aria-pressed={style === "agrovia"} onClick={() => setStyle("agrovia")}>Agrovia</button></div><button className="av2-icon-button av2-theme-button" aria-label={theme === "light" ? "Chuyển sang tối" : "Chuyển sang sáng"} onClick={() => setTheme(value => value === "light" ? "dark" : "light")}>{theme === "light" ? <Moon size={19} /> : <Sun size={19} />}</button>
           <div ref={bellArea} className="av2-bell-wrap"><button className="av2-icon-button" aria-label="Thông báo nội bộ" aria-expanded={bellOpen} onClick={() => setBellOpen(value => !value)}><Bell size={19} />{unread > 0 && <span className="av2-unread">{unread > 99 ? "99+" : unread}</span>}</button>{bellOpen && <div className="av2-notification-popover"><strong>Thông báo nội bộ</strong><p>{loading ? "Đang tải..." : error || `${unread} thông báo chưa đọc`}</p>{!error && result?.data.slice(0, 3).map(item => <div className="av2-notification-item" key={item.id}><span>{item.message}</span>{item.status === "read" && <Check size={15} aria-label="Đã đọc" />}</div>)}<Link prefetch={false} href="/admin/v2?screen=notifications">Mở cảnh báo & thông báo <ArrowUpRight size={15} /></Link></div>}</div>

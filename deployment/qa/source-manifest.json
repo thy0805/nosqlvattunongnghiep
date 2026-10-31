@@ -1,0 +1,1899 @@
+{
+  "source": "QA demo 20261031; compared with accepted step1 backup",
+  "base_commit": "181c91850730278b18f5da2d55157bc5c2f08974",
+  "qa_files_matched": 299,
+  "included_qa_source": [
+    {
+      "qa_path": "api-laravel/.editorconfig",
+      "repository_path": "api-laravel/.editorconfig",
+      "sha256": "fe39e0ad06edea8e256e44f1fc4f319a8acfa785a7470af5cf6b9ed12dc34406",
+      "bytes": 275
+    },
+    {
+      "qa_path": "api-laravel/.env.example",
+      "repository_path": "api-laravel/.env.example",
+      "sha256": "7ce30ddc7e4a29d50e88e1777ab9be788913c378e6d923f469d0bd558b857d51",
+      "bytes": 495
+    },
+    {
+      "qa_path": "api-laravel/.gitattributes",
+      "repository_path": "api-laravel/.gitattributes",
+      "sha256": "ca9b0541e337e454189fbf2adb05adc0bcde4bc9e05e38c9e2ebea1267946732",
+      "bytes": 195,
+      "qa_sha256": "a40eb27ee0b545ca5b5542daaf99fec51f84f23b3766a6353864ef2a115bc51c",
+      "packaging_adjustment": "Append * -text to preserve exact bytes of QA source in Git; no application change"
+    },
+    {
+      "qa_path": "api-laravel/.gitignore",
+      "repository_path": "api-laravel/.gitignore",
+      "sha256": "3ee1060a695b64e763d8a438ac1fe87494ff00d92680c3f63ca56bc103ed4142",
+      "bytes": 341
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Cancellations.php",
+      "repository_path": "api-laravel/app/Commerce/Cancellations.php",
+      "sha256": "fb722d40f5abe494f2e944dca64ee0d19780eaf8c1d2052bf682abcc8ad91652",
+      "bytes": 3929
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CommerceReports.php",
+      "repository_path": "api-laravel/app/Commerce/CommerceReports.php",
+      "sha256": "992a9950d08db0aea4c8cf39f466c98d879a1dd8f233a3070b81e0dc7d85d3e3",
+      "bytes": 6878
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CommerceSchema.php",
+      "repository_path": "api-laravel/app/Commerce/CommerceSchema.php",
+      "sha256": "24746834ccf626f035518c18645f1cbae818969ae288f9b309c7c70b4e29954e",
+      "bytes": 5645
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CommerceStore.php",
+      "repository_path": "api-laravel/app/Commerce/CommerceStore.php",
+      "sha256": "a1dd7f92fc2aeaa0edcba8c3ecbb852a27489049677c25ef8ebe225e6214eced",
+      "bytes": 5610
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CustomerAccounts.php",
+      "repository_path": "api-laravel/app/Commerce/CustomerAccounts.php",
+      "sha256": "551440abb69966470b4081178ffafb4d4cdf6f254a93549558ef58a97186301f",
+      "bytes": 9802
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CustomerCare.php",
+      "repository_path": "api-laravel/app/Commerce/CustomerCare.php",
+      "sha256": "a64fed4eb65b9173ddd64ac2a851b0e975f3982b9dde186cea18c4bca9025fcf",
+      "bytes": 13019
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CustomerPasswordReset.php",
+      "repository_path": "api-laravel/app/Commerce/CustomerPasswordReset.php",
+      "sha256": "61a4d1cb52849fe385a9056eb6bdc3bb56d992e270fcaacfff8d60086117467a",
+      "bytes": 3968
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/CustomerSegments.php",
+      "repository_path": "api-laravel/app/Commerce/CustomerSegments.php",
+      "sha256": "0c9db84d44e3236a1f21b5b351d17d4a2f2630484e1d65b4fb6eba80e1491201",
+      "bytes": 3051
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Dealers.php",
+      "repository_path": "api-laravel/app/Commerce/Dealers.php",
+      "sha256": "282e8153a7abf961cf9703ee19039b24b67d40b72a5178dbabd1b0bad8b938cd",
+      "bytes": 10139
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Exchanges.php",
+      "repository_path": "api-laravel/app/Commerce/Exchanges.php",
+      "sha256": "da678f2fc48e2192c87a56e43f897c4da5d6762e6e14984828873c9f67f94811",
+      "bytes": 9565
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Fulfillment.php",
+      "repository_path": "api-laravel/app/Commerce/Fulfillment.php",
+      "sha256": "2c1c67fcb00edcf099132f0bae52b6b80b8ea07bc515d311b15453d917fbc059",
+      "bytes": 8963
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Marketing.php",
+      "repository_path": "api-laravel/app/Commerce/Marketing.php",
+      "sha256": "c1cca526f25a9a8e73b98d766a4d2486f227b6a989dc4c26a27dcbbe4e462180",
+      "bytes": 9342
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Orders.php",
+      "repository_path": "api-laravel/app/Commerce/Orders.php",
+      "sha256": "b7f3042db1ebab93e4a445da4e28fb219ae5d0d7d7db10c04289b3d27ec9b25f",
+      "bytes": 28741
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Pricing.php",
+      "repository_path": "api-laravel/app/Commerce/Pricing.php",
+      "sha256": "e30f86413889b34b8ec58cd6e9ef7d09d9b2647eebcbea426ebb82e081a941ad",
+      "bytes": 1126
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Promotions.php",
+      "repository_path": "api-laravel/app/Commerce/Promotions.php",
+      "sha256": "4dfb8a4e0ead0895862a99b0023b818db7b644a2fae6ca98f38f87bb65190cd7",
+      "bytes": 13521
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/RecurringPurchases.php",
+      "repository_path": "api-laravel/app/Commerce/RecurringPurchases.php",
+      "sha256": "5d18a4f36b7c49185075ff1af523b09262972ce9f2804e501986a934e529646f",
+      "bytes": 4641
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Returns.php",
+      "repository_path": "api-laravel/app/Commerce/Returns.php",
+      "sha256": "620500627a2da1fc557199dff8b02423f6e52d1390f7c9970e7dd89f69c6616d",
+      "bytes": 14143
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Storefront.php",
+      "repository_path": "api-laravel/app/Commerce/Storefront.php",
+      "sha256": "4223018db4f8f04947ece677ea202cd283b001b5999ea44a4d557bc1ef85ffc0",
+      "bytes": 6190
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/Uploads.php",
+      "repository_path": "api-laravel/app/Commerce/Uploads.php",
+      "sha256": "f8e0a1e56bc58b01354db1ec627c9ea46800fc713a2c4aa2eb3d0ca1051d52cc",
+      "bytes": 4258
+    },
+    {
+      "qa_path": "api-laravel/app/Commerce/WholesaleQuotes.php",
+      "repository_path": "api-laravel/app/Commerce/WholesaleQuotes.php",
+      "sha256": "123af21f10343faf7bc258cc2e866dde7861f8251f69fed0f0b44adb2073c56b",
+      "bytes": 8917
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/AuthController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/AuthController.php",
+      "sha256": "589d4892890b468c3ec628ec23996e2a0e98dd1fe9ea88457f8b9d8d241182f3",
+      "bytes": 1109
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/CatalogController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/CatalogController.php",
+      "sha256": "441ea09aef9771e4f631a46807b4b20a7e2313968f00b83bc532000202942646",
+      "bytes": 3807
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/CatalogWriteController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/CatalogWriteController.php",
+      "sha256": "ff881151bbd43c046714127ed284a3611d55a0583990d32faaa3e67ef1640cd9",
+      "bytes": 11043
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/Controller.php",
+      "repository_path": "api-laravel/app/Http/Controllers/Controller.php",
+      "sha256": "e8ae1d379d50027fd478b2f00f4b0f211fcc2290606bb941f17251a651276e1b",
+      "bytes": 70
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/CustomerController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/CustomerController.php",
+      "sha256": "569b037a13f5288f44f1b170ecf96a2d882aa89a7424994bed27937ff26df463",
+      "bytes": 4467
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/DebtController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/DebtController.php",
+      "sha256": "f1e548e6ad1875fa6de491e855c3e070caba8ac62d879c1a7d3933a37994f21b",
+      "bytes": 4746
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/InventoryAlertController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/InventoryAlertController.php",
+      "sha256": "e1426ee32bbe2fb887a883f3ecdc3f1d069c6014e1e7544bf19ba4ce2bae4de3",
+      "bytes": 6811
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/InventoryController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/InventoryController.php",
+      "sha256": "96912ce3e5909c51667d3a3c1e317f3382ea4c13520c23d98fb16d139fa522b9",
+      "bytes": 6429
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/MobileAuthController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/MobileAuthController.php",
+      "sha256": "63f3fe83cd358cba58e6c0fcf15e0396c737bc398c88ea03538ccb466858d88d",
+      "bytes": 2622
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/NotificationController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/NotificationController.php",
+      "sha256": "4313eae4d9bebaca41de5deff259ad8eb0c0bc08f688cd31b36ae50883e3b897",
+      "bytes": 1324
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/OrganizationController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/OrganizationController.php",
+      "sha256": "049a8393f3e2568394a80939d09e9e76fda821594403569975f9dfe735af8bd2",
+      "bytes": 8979
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/OutboxController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/OutboxController.php",
+      "sha256": "086c54eef0e74ceab0399bf781dc71e4de0f3c592eaf0db3bd841c549abd5e92",
+      "bytes": 963
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ProductContentController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ProductContentController.php",
+      "sha256": "680cf922758029e77b556e8a4f6bd5e5b8a37664b8aabe5873155e4787c5f3d1",
+      "bytes": 2413
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ProfileController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ProfileController.php",
+      "sha256": "7cf9ea9133c7762cfd54b7501edc0a107850841235236ff13ddd2fcc82fd8674",
+      "bytes": 1755
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/PurchaseReceiptController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/PurchaseReceiptController.php",
+      "sha256": "b38129c9cee996fad974b3763d42e9fd3951748e8361e836c30a393794b81aef",
+      "bytes": 10851
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/SalesOrderController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/SalesOrderController.php",
+      "sha256": "bfe230803cd39e2eab98c446c76d4d8ac367f158b9b4229f4cc881bf063908ea",
+      "bytes": 9205
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/SalesReportController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/SalesReportController.php",
+      "sha256": "355225adc2a4a79074b3118910b82f503771378230543669a4b4d2d813a384f5",
+      "bytes": 7226
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopAdminController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopAdminController.php",
+      "sha256": "d47232597ddcb6d785d64f9dae917d87ea0c21b907ce47235097eaae70e7c9aa",
+      "bytes": 6038
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopBusinessController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopBusinessController.php",
+      "sha256": "72b3b08cb841e592e2802163934352e61546219b5b6b96388a7f477552ac3101",
+      "bytes": 1806
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopCareController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopCareController.php",
+      "sha256": "2ea77860349545210317979b038665cbfd2b112d72d052595efc26c3960585f6",
+      "bytes": 3607
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopController.php",
+      "sha256": "300ae381046302db02ad118dab87e22907fb20bb6c747f20e2d28595c2df7279",
+      "bytes": 6146
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopFulfillmentController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopFulfillmentController.php",
+      "sha256": "ef7ea8cbf81ed443073a95ea0e34e75189b8024f45885b0d97dc95a98b8fc11e",
+      "bytes": 1580
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopMarketingController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopMarketingController.php",
+      "sha256": "a916a2fa927b18d9b3a5119bc7f9541e76928dcffe8ad48fc71b195fb4a35d3f",
+      "bytes": 975
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopOrderController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopOrderController.php",
+      "sha256": "44b4e545c092cb3bfbde471c43a22f107e2af5a3af425397c4bb12b51995e57c",
+      "bytes": 3292
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopProductImageController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopProductImageController.php",
+      "sha256": "2794d291d9d5159ee41a1efcec3bbe42418e66a7771f41aae2c04128d7e4ccc4",
+      "bytes": 2346
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopReportController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopReportController.php",
+      "sha256": "cc98a080e44af6625c7d354f81175ef29c8e822da495c2a90b75bf467008055a",
+      "bytes": 306
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopReturnController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopReturnController.php",
+      "sha256": "bc2272e586587a3fe5429181de5731866fee1fc5e8cdd961b28d429a113ba9a2",
+      "bytes": 3234
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/ShopUploadController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/ShopUploadController.php",
+      "sha256": "02d697cbc42b655f3020362e68d6d6511f74a6652d8d98355b5806e50608e18e",
+      "bytes": 645
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/StockTransferController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/StockTransferController.php",
+      "sha256": "2df67dc57dbae1b9e6ae37f1160a4fcbc5a57096acf1d8f64f0d7df452d51045",
+      "bytes": 12038
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/SupplierController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/SupplierController.php",
+      "sha256": "cef3e0e4feebc4c34587c29cccfcc489cf49f9c043fc119d2440d25414464cf8",
+      "bytes": 4097
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Controllers/UserManagementController.php",
+      "repository_path": "api-laravel/app/Http/Controllers/UserManagementController.php",
+      "sha256": "1911be7a16268283eb6911905fbd1f453cede6292ba71d5a88ed6b74b938b17e",
+      "bytes": 9715
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Middleware/EnsureActiveUser.php",
+      "repository_path": "api-laravel/app/Http/Middleware/EnsureActiveUser.php",
+      "sha256": "55cf774c1c974f9dea028932842155da0865db2cd26aed6a14da09af47fc4c0e",
+      "bytes": 327
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Middleware/EnsureMongoModule.php",
+      "repository_path": "api-laravel/app/Http/Middleware/EnsureMongoModule.php",
+      "sha256": "5720b4c9da754d52dede9d8583a5691d3956fbbd7dd908c18dece9078e31e943",
+      "bytes": 1475
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Middleware/SerializeBigIntIds.php",
+      "repository_path": "api-laravel/app/Http/Middleware/SerializeBigIntIds.php",
+      "sha256": "422decf61d25e09fe0832c033460b307d91bd797218bfc1f1ad97c0e969ffe46",
+      "bytes": 1193
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Middleware/ValidateBearerToken.php",
+      "repository_path": "api-laravel/app/Http/Middleware/ValidateBearerToken.php",
+      "sha256": "417968af3b82fd36556baeba3af47d49cb727013c456acf761ee88144f9ff57b",
+      "bytes": 676
+    },
+    {
+      "qa_path": "api-laravel/app/Http/Middleware/ValidateBigIntRouteIds.php",
+      "repository_path": "api-laravel/app/Http/Middleware/ValidateBigIntRouteIds.php",
+      "sha256": "1abdfec1d72e1064acffb2ade967991407e390cf0c8b9a9c255a87d4dfa1af73",
+      "bytes": 657
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/Codec.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/Codec.php",
+      "sha256": "d912d7780f7f3adfd1b0703c5b240c67f01cc8bc8e03350742eae34167f886be",
+      "bytes": 3109
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/IdCounter.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/IdCounter.php",
+      "sha256": "622e3987985db3d04e0fc900c16d78e96f1cf4d66a8e8e2ee183ae7898247c2b",
+      "bytes": 777
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/Isolation.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/Isolation.php",
+      "sha256": "c630aec2dc7821f37312b5c85d07cf47a39973404c94d06dc78d74287f361a9e",
+      "bytes": 3042
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/Runtime.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/Runtime.php",
+      "sha256": "0cae0b016ce412b3b5e0db48395563e47c438e8fe17e022a45e53b0b6d55390b",
+      "bytes": 1557
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/Schema.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/Schema.php",
+      "sha256": "1e7b69df317beff873b05408e89d80b539113d6e55e345ec8a53b0e4360f7e68",
+      "bytes": 3437
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/StrictConfiguration.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/StrictConfiguration.php",
+      "sha256": "5ce8f3e9e8ad52f4e6d394f8b37a49a2694743c892d3fb9be71623101af932be",
+      "bytes": 297
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/Transactions.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/Transactions.php",
+      "sha256": "d147d26acf7ee45ca79fed21fb154163c345f40564f9ec832e867f86b7f17045",
+      "bytes": 3366
+    },
+    {
+      "qa_path": "api-laravel/app/Infrastructure/Mongo/UnitOfWork.php",
+      "repository_path": "api-laravel/app/Infrastructure/Mongo/UnitOfWork.php",
+      "sha256": "062b6bcd3ed82cc34c904f2c0c875c7d672ce63501e0d6ea2cdb9a19fc70956c",
+      "bytes": 2221
+    },
+    {
+      "qa_path": "api-laravel/app/Models/PersonalAccessToken.php",
+      "repository_path": "api-laravel/app/Models/PersonalAccessToken.php",
+      "sha256": "19b7270451dc2e5695c3c53d313cf27029a0ff58a4b903b751f065d46e37183a",
+      "bytes": 1342
+    },
+    {
+      "qa_path": "api-laravel/app/Models/User.php",
+      "repository_path": "api-laravel/app/Models/User.php",
+      "sha256": "f7c09aa362a4ef4fa6cd13c4eb7ff2639686eceabfeb6f9eac3b497e21a44fec",
+      "bytes": 2069
+    },
+    {
+      "qa_path": "api-laravel/app/Providers/AppServiceProvider.php",
+      "repository_path": "api-laravel/app/Providers/AppServiceProvider.php",
+      "sha256": "8ab999e9927d6bbff509aa171869869fccb5dbc03b95cd6852f87cfd27497c3d",
+      "bytes": 1135
+    },
+    {
+      "qa_path": "api-laravel/app/Support/BranchAccess.php",
+      "repository_path": "api-laravel/app/Support/BranchAccess.php",
+      "sha256": "36d924ced19adc57bf17789c0853b90ef57f6a984ef1a27b179bda28a63f312a",
+      "bytes": 839
+    },
+    {
+      "qa_path": "api-laravel/app/Support/CatalogPermission.php",
+      "repository_path": "api-laravel/app/Support/CatalogPermission.php",
+      "sha256": "b9483dc9377ab7a22620c67873cb7a99289622161d77201112e477b0850ce753",
+      "bytes": 547
+    },
+    {
+      "qa_path": "api-laravel/app/Support/CatalogQuery.php",
+      "repository_path": "api-laravel/app/Support/CatalogQuery.php",
+      "sha256": "edc55b444c2169c5cc8de8f7ee0da7b02c0cd856646271492e4edd911a17a2cf",
+      "bytes": 1431
+    },
+    {
+      "qa_path": "api-laravel/app/Support/CatalogStore.php",
+      "repository_path": "api-laravel/app/Support/CatalogStore.php",
+      "sha256": "b638f1a4767de84f46caaf0602a22a5c587fcae1b3b08da3ec4c7d8cf3ea39df",
+      "bytes": 6678
+    },
+    {
+      "qa_path": "api-laravel/app/Support/DebtAccess.php",
+      "repository_path": "api-laravel/app/Support/DebtAccess.php",
+      "sha256": "aa1a31759702507c6e764c7e784fe1c1add8bcc2a16ec264a0f0421793f31c6d",
+      "bytes": 922
+    },
+    {
+      "qa_path": "api-laravel/app/Support/DebtService.php",
+      "repository_path": "api-laravel/app/Support/DebtService.php",
+      "sha256": "744511dc2bd5ede2f33dfc0fa2d233220c81ad12e2c2875cd126cbe829655dfd",
+      "bytes": 8107
+    },
+    {
+      "qa_path": "api-laravel/app/Support/DecimalId.php",
+      "repository_path": "api-laravel/app/Support/DecimalId.php",
+      "sha256": "1e1375aba336dbfac5b323c6c9e03933134d450a5749b340c64566c8d60fbae3",
+      "bytes": 917
+    },
+    {
+      "qa_path": "api-laravel/app/Support/DecimalLimit.php",
+      "repository_path": "api-laravel/app/Support/DecimalLimit.php",
+      "sha256": "6db501a3d5e4d4067884365ab7a401f15c6646a47184816a4b4265a409ac9d60",
+      "bytes": 1235
+    },
+    {
+      "qa_path": "api-laravel/app/Support/IdentityStore.php",
+      "repository_path": "api-laravel/app/Support/IdentityStore.php",
+      "sha256": "fea61e59067e48fccd6a39bf758be245199efdd7772f6bc4ad145598ec414bd8",
+      "bytes": 8314
+    },
+    {
+      "qa_path": "api-laravel/app/Support/InventoryAlertScanner.php",
+      "repository_path": "api-laravel/app/Support/InventoryAlertScanner.php",
+      "sha256": "82b4ea12ca8fe9c6b82b5e57a410d9c094f05bf392e8c143fcd42bf6c4fc649c",
+      "bytes": 3031
+    },
+    {
+      "qa_path": "api-laravel/app/Support/InventoryAlertStore.php",
+      "repository_path": "api-laravel/app/Support/InventoryAlertStore.php",
+      "sha256": "22304e5c7815c68df0c274cecea70b8baa01fa48af293899921ddee6403ac531",
+      "bytes": 7393
+    },
+    {
+      "qa_path": "api-laravel/app/Support/NotificationStore.php",
+      "repository_path": "api-laravel/app/Support/NotificationStore.php",
+      "sha256": "9d70b773e6812d7c79c55eb35fca650f07c8dd294b9d68be8110e78b1df44cd5",
+      "bytes": 2780
+    },
+    {
+      "qa_path": "api-laravel/app/Support/OutboxService.php",
+      "repository_path": "api-laravel/app/Support/OutboxService.php",
+      "sha256": "b6f71f5789735c61eebc5f911407d6d8a0b49fc5047b94e8e33e11b67da7aee7",
+      "bytes": 995
+    },
+    {
+      "qa_path": "api-laravel/app/Support/OutboxStore.php",
+      "repository_path": "api-laravel/app/Support/OutboxStore.php",
+      "sha256": "c7404d8df6e280a42f7686010207b076284b500719e0105a8f6a69335dfbdaee",
+      "bytes": 2974
+    },
+    {
+      "qa_path": "api-laravel/app/Support/PartnerAccess.php",
+      "repository_path": "api-laravel/app/Support/PartnerAccess.php",
+      "sha256": "1d6d9b7d407457d6e525c6086bd727a6f954a69d43c40a4068df55a8384bab39",
+      "bytes": 283
+    },
+    {
+      "qa_path": "api-laravel/app/Support/ProductContentStore.php",
+      "repository_path": "api-laravel/app/Support/ProductContentStore.php",
+      "sha256": "c48d8240eea0f58caa41cfa3eec885f3791fc2bcfac3fc9a9f3ede10e963bb8b",
+      "bytes": 1619
+    },
+    {
+      "qa_path": "api-laravel/app/Support/PurchaseReceiptService.php",
+      "repository_path": "api-laravel/app/Support/PurchaseReceiptService.php",
+      "sha256": "1059a601fe68fadcdda4ea0d9f1db407b0c9cfd25e494a60b1af584e9671dd15",
+      "bytes": 12719
+    },
+    {
+      "qa_path": "api-laravel/app/Support/PurchaseStore.php",
+      "repository_path": "api-laravel/app/Support/PurchaseStore.php",
+      "sha256": "4f20cbf0b9805971faa5ecf1375c8452d4f7bea8501b8d5522f970c8ac5c6825",
+      "bytes": 8065
+    },
+    {
+      "qa_path": "api-laravel/app/Support/ReceiptAccess.php",
+      "repository_path": "api-laravel/app/Support/ReceiptAccess.php",
+      "sha256": "fd47e353aacfec22eff216ce2c9ddd6f4cb90afe8ae6f82992ddf3173c15e4a8",
+      "bytes": 799
+    },
+    {
+      "qa_path": "api-laravel/app/Support/SaleService.php",
+      "repository_path": "api-laravel/app/Support/SaleService.php",
+      "sha256": "cd92ea38cc3ca184b5a756d43e80c55fda20c54e2cef0715caa134c92d1410ac",
+      "bytes": 16142
+    },
+    {
+      "qa_path": "api-laravel/app/Support/SalesAccess.php",
+      "repository_path": "api-laravel/app/Support/SalesAccess.php",
+      "sha256": "f21acfa0e33a79c5d271387dc3155adefb91880deb162d356173c466636e9e37",
+      "bytes": 555
+    },
+    {
+      "qa_path": "api-laravel/app/Support/SalesReportStore.php",
+      "repository_path": "api-laravel/app/Support/SalesReportStore.php",
+      "sha256": "7b540dd58612a160a82c6b444468533097eb1fbe1937bc0e30c6d255a049832a",
+      "bytes": 4588
+    },
+    {
+      "qa_path": "api-laravel/app/Support/SalesStore.php",
+      "repository_path": "api-laravel/app/Support/SalesStore.php",
+      "sha256": "7fc580ab8bf16efabd94c85ef69374af8f96022c7c5d8f2194bc89faf0d49320",
+      "bytes": 5652
+    },
+    {
+      "qa_path": "api-laravel/app/Support/StockTransferService.php",
+      "repository_path": "api-laravel/app/Support/StockTransferService.php",
+      "sha256": "ab7962e0dad4ce4f0cee104dc00ec3ebff7d43c9bac5d5471c9fbfbab40875c6",
+      "bytes": 18587
+    },
+    {
+      "qa_path": "api-laravel/app/Support/TransferAccess.php",
+      "repository_path": "api-laravel/app/Support/TransferAccess.php",
+      "sha256": "a950ed163986d552e38696f3304b87147240ffdeff525ea1c566c875092dee23",
+      "bytes": 1514
+    },
+    {
+      "qa_path": "api-laravel/app/Support/TransferStore.php",
+      "repository_path": "api-laravel/app/Support/TransferStore.php",
+      "sha256": "4cfe92b970c90877c9d84b46884bd28b68c41218a0dc14c67f9de7c7f282fd71",
+      "bytes": 5431
+    },
+    {
+      "qa_path": "api-laravel/artisan",
+      "repository_path": "api-laravel/artisan",
+      "sha256": "f91a517c0c5d3a904c3f390933964a5e08ec1fc68146882730daac4aca4ffcec",
+      "bytes": 425
+    },
+    {
+      "qa_path": "api-laravel/bootstrap/app.php",
+      "repository_path": "api-laravel/bootstrap/app.php",
+      "sha256": "bc05756732cc03ea19945e2cc600483bacb1d45b8fa24347d63ee7cb22e922f1",
+      "bytes": 2897
+    },
+    {
+      "qa_path": "api-laravel/bootstrap/providers.php",
+      "repository_path": "api-laravel/bootstrap/providers.php",
+      "sha256": "f720e185207a343d4c19fc99dbb317a4187efbcd7d38a303a695bbdd77ffb943",
+      "bytes": 89
+    },
+    {
+      "qa_path": "api-laravel/composer.json",
+      "repository_path": "api-laravel/composer.json",
+      "sha256": "4be13ff7dfe8e0c10c23e3bf2ee0a4e6df405ecd352920d908ed0ed8ee9af63f",
+      "bytes": 2779
+    },
+    {
+      "qa_path": "api-laravel/composer.lock",
+      "repository_path": "api-laravel/composer.lock",
+      "sha256": "80a512c8bf2b2020fc7ed9c2de10f0a53679194626453c4cb1b298340008c71a",
+      "bytes": 321897
+    },
+    {
+      "qa_path": "api-laravel/config/app.php",
+      "repository_path": "api-laravel/config/app.php",
+      "sha256": "b4b25e15efa76846a7f2e19fd1044fec4945e4e928c4098126a2b0042b034383",
+      "bytes": 4281
+    },
+    {
+      "qa_path": "api-laravel/config/auth.php",
+      "repository_path": "api-laravel/config/auth.php",
+      "sha256": "c7e204e9785c9f596d66fb884b493f658f2327f157646bdb4088efd6b3a7773f",
+      "bytes": 4040
+    },
+    {
+      "qa_path": "api-laravel/config/cache.php",
+      "repository_path": "api-laravel/config/cache.php",
+      "sha256": "ee4ad2bba1edfcff52e9599f37371f2370d0b167cc226ce72d46cdf6edf2dc55",
+      "bytes": 4369
+    },
+    {
+      "qa_path": "api-laravel/config/cors.php",
+      "repository_path": "api-laravel/config/cors.php",
+      "sha256": "c7977f74b01d399555ba7bb7ac6a51aee50928d5a4316047c40ac60a1fccfc99",
+      "bytes": 382
+    },
+    {
+      "qa_path": "api-laravel/config/database.php",
+      "repository_path": "api-laravel/config/database.php",
+      "sha256": "46c93c703de8705a9c5ea3245655d37856f51e8ecb1615d10ed099769fc3c392",
+      "bytes": 347
+    },
+    {
+      "qa_path": "api-laravel/config/filesystems.php",
+      "repository_path": "api-laravel/config/filesystems.php",
+      "sha256": "ba7060d7a23e490c3ce830656f6d24ad3ccf5b868e3293f2a12e411959dc5635",
+      "bytes": 2532
+    },
+    {
+      "qa_path": "api-laravel/config/logging.php",
+      "repository_path": "api-laravel/config/logging.php",
+      "sha256": "beb1ffd0db910f6f0b4f75214c3d5aa385d692733ece8a450f4c169d2c99ce38",
+      "bytes": 4606
+    },
+    {
+      "qa_path": "api-laravel/config/mail.php",
+      "repository_path": "api-laravel/config/mail.php",
+      "sha256": "c43ff49a31c5f32ce21eb7159f2a4b3cd2f4074eaed5838d265646dbfedd3474",
+      "bytes": 3631
+    },
+    {
+      "qa_path": "api-laravel/config/mobile_auth.php",
+      "repository_path": "api-laravel/config/mobile_auth.php",
+      "sha256": "a735b2b05563d73d28b326c3a82652c423d8782fe2bfd8fd84a360535fc32234",
+      "bytes": 99
+    },
+    {
+      "qa_path": "api-laravel/config/mongodb.php",
+      "repository_path": "api-laravel/config/mongodb.php",
+      "sha256": "bdbb10728812d9f25bd8de990925042bec4faa08c5f21e74adc3b0c61b4bc1ad",
+      "bytes": 87
+    },
+    {
+      "qa_path": "api-laravel/config/nosql.php",
+      "repository_path": "api-laravel/config/nosql.php",
+      "sha256": "e605f5ff6221ec84d2a716e8f57d9a9b97136df9996a19ba8ba94ad594d652b3",
+      "bytes": 634
+    },
+    {
+      "qa_path": "api-laravel/config/queue.php",
+      "repository_path": "api-laravel/config/queue.php",
+      "sha256": "6101774da7c8b79af46d0028f2b8b31a484c3f7eda10b76e5b27b6093ad364a4",
+      "bytes": 4199
+    },
+    {
+      "qa_path": "api-laravel/config/services.php",
+      "repository_path": "api-laravel/config/services.php",
+      "sha256": "b7ee786ea1adbc92db9f229f479431c94503527c47051da3862eb0e4d7db70aa",
+      "bytes": 1039
+    },
+    {
+      "qa_path": "api-laravel/config/session.php",
+      "repository_path": "api-laravel/config/session.php",
+      "sha256": "64272cfbef6f47c65bf857f1c5b1e853700c0d0278de46b86663fd83ef4aeed8",
+      "bytes": 8423
+    },
+    {
+      "qa_path": "api-laravel/config/shop_reset.php",
+      "repository_path": "api-laravel/config/shop_reset.php",
+      "sha256": "b837394f1603a139ee8ae8f7c8281a44b923f9a324f55e2a22ffff799e9747be",
+      "bytes": 180
+    },
+    {
+      "qa_path": "api-laravel/database/.gitignore",
+      "repository_path": "api-laravel/database/.gitignore",
+      "sha256": "e758642d95e83e907e010b6e46b07b3f953c7cef11fe5ebefc2a77b9d7b4d5f7",
+      "bytes": 10
+    },
+    {
+      "qa_path": "api-laravel/database/migrations/2026_10_12_000001_create_personal_access_tokens_table.php",
+      "repository_path": "api-laravel/database/migrations/2026_10_12_000001_create_personal_access_tokens_table.php",
+      "sha256": "fa99aa7b8088515cddd5c9878b7c717b0363819cf237d70e3536d8661fa6c53d",
+      "bytes": 779
+    },
+    {
+      "qa_path": "api-laravel/database/mongodb/manifest.json",
+      "repository_path": "api-laravel/database/mongodb/manifest.json",
+      "sha256": "4b80cad3b18fd0fa2f058cd0f8d980cf66d54589a1683c3ecff5c48ada269e3e",
+      "bytes": 483930
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_catalog_active.sql",
+      "repository_path": "api-laravel/database/patches/20260927_catalog_active.sql",
+      "sha256": "89629d0e5fa2f99b0e4750149ff3e8b353961c65c0f572d56f8cc453d94e7ddd",
+      "bytes": 475
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_debt_sources.sql",
+      "repository_path": "api-laravel/database/patches/20260927_debt_sources.sql",
+      "sha256": "343a5378b3042ef190a37916fb55ee2a677baf7ee93fb0952af71575be8f4f67",
+      "bytes": 2119
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_inventory_alert_incidents.sql",
+      "repository_path": "api-laravel/database/patches/20260927_inventory_alert_incidents.sql",
+      "sha256": "5b6fdf5b6a5c6e37a3b07a728b6fb047efdcb95083ec1c187cf9d7948568abe6",
+      "bytes": 1236
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_outbox_delivery.sql",
+      "repository_path": "api-laravel/database/patches/20260927_outbox_delivery.sql",
+      "sha256": "1c56f1c2e8fdff8c3685eb86da5f2c253a76846ba73cbdc621536075a0076dc2",
+      "bytes": 1053
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_product_expiry_warning.sql",
+      "repository_path": "api-laravel/database/patches/20260927_product_expiry_warning.sql",
+      "sha256": "31145d4ac67100e4668eb1b1b120c97988b184b8dea6eaf2a6c4ef44d33ee974",
+      "bytes": 245
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_product_tax.sql",
+      "repository_path": "api-laravel/database/patches/20260927_product_tax.sql",
+      "sha256": "118fac2f7cc10ae8f2342ba3b8e597058f2a7dcb80497c74f54c24166b7e228b",
+      "bytes": 554
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_receipts_cost.sql",
+      "repository_path": "api-laravel/database/patches/20260927_receipts_cost.sql",
+      "sha256": "262403344496c0d32b8e2ebec75005660a7f278a685b7cac984d1c73fb052649",
+      "bytes": 2014
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_sale_idempotency.sql",
+      "repository_path": "api-laravel/database/patches/20260927_sale_idempotency.sql",
+      "sha256": "6d8cf5b1ddd76acf033d5adca661387202d8d33e6e97f36b030f121469f375a0",
+      "bytes": 154
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_sales_season.sql",
+      "repository_path": "api-laravel/database/patches/20260927_sales_season.sql",
+      "sha256": "4325946131d3cca204f635c8253e254ccfac999fd0570cda28402c42e24109c6",
+      "bytes": 81
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_stock_transfer_flow.sql",
+      "repository_path": "api-laravel/database/patches/20260927_stock_transfer_flow.sql",
+      "sha256": "588204dc1a39496bee207bd47d779eb7d2755e0550a59501c6fb1705c09f1878",
+      "bytes": 2148
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_transfer_reconciliation.sql",
+      "repository_path": "api-laravel/database/patches/20260927_transfer_reconciliation.sql",
+      "sha256": "294182d1636e309e663eadca56a6c9e574196b9888c6f8dcd38250c70c380fda",
+      "bytes": 1860
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20260927_warehouse_product_settings.sql",
+      "repository_path": "api-laravel/database/patches/20260927_warehouse_product_settings.sql",
+      "sha256": "e97299fd113b228d7063e1d3f2bb4774b2dc09381f045e9eec560cdc5ca137e0",
+      "bytes": 581
+    },
+    {
+      "qa_path": "api-laravel/database/patches/20261003_purchase_supplier_invoice.sql",
+      "repository_path": "api-laravel/database/patches/20261003_purchase_supplier_invoice.sql",
+      "sha256": "782306f68a2e093dbfe354aea136d822ef7fe9741d80d66c7690278077b37126",
+      "bytes": 810
+    },
+    {
+      "qa_path": "api-laravel/database/schema/klcn186.sql",
+      "repository_path": "api-laravel/database/schema/klcn186.sql",
+      "sha256": "3172800a0cc4fdefa772bae23ba9f3b1731ed078dbddfc45e5db42721b95ad88",
+      "bytes": 15842
+    },
+    {
+      "qa_path": "api-laravel/database/seeders/DatabaseSeeder.php",
+      "repository_path": "api-laravel/database/seeders/DatabaseSeeder.php",
+      "sha256": "985f63ef68aa23b94bfd7149df07c271fdb6df26c2aab405b4fba7fcf1a7d1f9",
+      "bytes": 492
+    },
+    {
+      "qa_path": "api-laravel/database/seeders/DemoDataSeeder.php",
+      "repository_path": "api-laravel/database/seeders/DemoDataSeeder.php",
+      "sha256": "3db2a1c34a4f911fb443d7d7005c7d87d779eecdfe40d02fbe8f786a8b12cd23",
+      "bytes": 3055
+    },
+    {
+      "qa_path": "api-laravel/package.json",
+      "repository_path": "api-laravel/package.json",
+      "sha256": "023d511d768e05b69e8127e18ae0e3d4a2e91702e8dd82917c655e53e5908de5",
+      "bytes": 461
+    },
+    {
+      "qa_path": "api-laravel/phpunit.xml",
+      "repository_path": "api-laravel/phpunit.xml",
+      "sha256": "493369cfb7feea104da4bec214c2cc6526ca2f1b9d937c50a2961fc59cb61aaf",
+      "bytes": 1322
+    },
+    {
+      "qa_path": "api-laravel/public/.htaccess",
+      "repository_path": "api-laravel/public/.htaccess",
+      "sha256": "b7e379c77639fd56144947dbae84c84eb466d9c686ea81f2f013ae85421da923",
+      "bytes": 740
+    },
+    {
+      "qa_path": "api-laravel/public/index.php",
+      "repository_path": "api-laravel/public/index.php",
+      "sha256": "eba77cba39695b6bd091fe5211d481f7ebb2ce2d8d26230b5a609465d0a4aff9",
+      "bytes": 543
+    },
+    {
+      "qa_path": "api-laravel/public/robots.txt",
+      "repository_path": "api-laravel/public/robots.txt",
+      "sha256": "e5c4b84484ee4216e9373be99380320c25dd94805f99f0a805846f087636553f",
+      "bytes": 24
+    },
+    {
+      "qa_path": "api-laravel/resources/css/app.css",
+      "repository_path": "api-laravel/resources/css/app.css",
+      "sha256": "02db84e827e06d8349293e9797eb8d81465e109e91976775964c4bf873b6fab5",
+      "bytes": 339
+    },
+    {
+      "qa_path": "api-laravel/resources/js/app.js",
+      "repository_path": "api-laravel/resources/js/app.js",
+      "sha256": "101ead936a2281d53dcc064b7e2a2ab0d53b92ef3ef7b34b668673007895c860",
+      "bytes": 3
+    },
+    {
+      "qa_path": "api-laravel/resources/views/welcome.blade.php",
+      "repository_path": "api-laravel/resources/views/welcome.blade.php",
+      "sha256": "cad37219edcf617e71e30fe75d86ebad62f0d79c2dd056f09d88db2e75e40a23",
+      "bytes": 72230
+    },
+    {
+      "qa_path": "api-laravel/routes/api.php",
+      "repository_path": "api-laravel/routes/api.php",
+      "sha256": "6795a07507ce4abd1a1e74b4a6540d6ad9477a0a88cd6a8758d57a00fdaef28d",
+      "bytes": 7603
+    },
+    {
+      "qa_path": "api-laravel/routes/commerce.php",
+      "repository_path": "api-laravel/routes/commerce.php",
+      "sha256": "49fcf1f27a4ed271560d39a0cdb5a86366e40fcdc8a7ae8a9c56ddc7adb48bc7",
+      "bytes": 10905
+    },
+    {
+      "qa_path": "api-laravel/routes/console.php",
+      "repository_path": "api-laravel/routes/console.php",
+      "sha256": "a74c811b33948a27b5456b947336e80b0dea6a9788a6179500196ac2fb9b8414",
+      "bytes": 3490
+    },
+    {
+      "qa_path": "api-laravel/routes/web.php",
+      "repository_path": "api-laravel/routes/web.php",
+      "sha256": "d7452b43e0840eba9620f69238cef7b9b2d4d13f3e32bedde29ed7dbe6116303",
+      "bytes": 360
+    },
+    {
+      "qa_path": "api-laravel/vite.config.js",
+      "repository_path": "api-laravel/vite.config.js",
+      "sha256": "f413e14379e2db8b200c63a6326b925f6d47cc0df458c77bfe188cfc23e8081f",
+      "bytes": 632
+    },
+    {
+      "qa_path": "scripts/api-router.php",
+      "repository_path": "scripts/api-router.php",
+      "sha256": "dda1e1f665c967be3091dde7819295def892170c3f59ba88079833d878d18d2d",
+      "bytes": 529
+    },
+    {
+      "qa_path": "scripts/qa.ps1",
+      "repository_path": "scripts/qa.ps1",
+      "sha256": "00488256a6a972ffe6dcc8516869dcc7b9617e56ea4cf9721542a8b48725aa41",
+      "bytes": 3898
+    },
+    {
+      "qa_path": "scripts/web-server.cjs",
+      "repository_path": "scripts/web-server.cjs",
+      "sha256": "a596fac124c7be403aec2c9f23ee19fec9e0ead5259448a26eef02bf417a0c93",
+      "bytes": 327
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/.env.example",
+      "repository_path": "admin/.env.example",
+      "sha256": "70208b3f6d6d661933dce48e386b6c52149c99e3a9a7e900b3d958143cb140e8",
+      "bytes": 135
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/.gitignore",
+      "repository_path": "admin/.gitignore",
+      "sha256": "90bae17eb93861d1977e573a686151a3707cb56b82fe9ccf69e8e76386210a6a",
+      "bytes": 521
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/components.json",
+      "repository_path": "admin/components.json",
+      "sha256": "7f89b1e9e3995be8620be3162df8e08b7dd512f894fb0accb559193138fdc390",
+      "bytes": 520
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/eslint.config.mjs",
+      "repository_path": "admin/eslint.config.mjs",
+      "sha256": "6d4db400d67e935674f11d7990448371d6c10c17107c8f48febf9975d9f199be",
+      "bytes": 482
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/next.config.ts",
+      "repository_path": "admin/next.config.ts",
+      "sha256": "62cb8aa0f9d4b4b9519bb093ffc4b066c8d301b19a5fafb7c9eb8452fc80f28d",
+      "bytes": 601
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/package-lock.json",
+      "repository_path": "admin/package-lock.json",
+      "sha256": "2743dc1711eb18966309b401106bf0ff143df065bba15b4edc855e8f5981105d",
+      "bytes": 366957
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/package.json",
+      "repository_path": "admin/package.json",
+      "sha256": "9b35fe871054498e0063fdad829ac0cec65fed1185a420db79a8ad3548245710",
+      "bytes": 1054
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/postcss.config.mjs",
+      "repository_path": "admin/postcss.config.mjs",
+      "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde",
+      "bytes": 94
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/alerts/page.tsx",
+      "repository_path": "admin/src/app/admin/alerts/page.tsx",
+      "sha256": "bceeeb2af001dedd1e7959ae4c2bd00e595a0e4d7b68eea1b7fbbf9c57ee554a",
+      "bytes": 13635
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/catalog/page.tsx",
+      "repository_path": "admin/src/app/admin/catalog/page.tsx",
+      "sha256": "25a1c647e8e46412e5667be945c8b2fdd9a6e6f29d847fc67890df5016b3a740",
+      "bytes": 9965
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/commerce/commerce.css",
+      "repository_path": "admin/src/app/admin/commerce/commerce.css",
+      "sha256": "89dc50cf3f277e10a12b8f7df6936cd1af058f4e85ddc07a6f8f9ede05e2b278",
+      "bytes": 855
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/commerce/page.tsx",
+      "repository_path": "admin/src/app/admin/commerce/page.tsx",
+      "sha256": "afb5a18fd679cad5271417b75e9a3b52d41c481819f08e42da2d3507a388abbd",
+      "bytes": 167
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/customers/page.tsx",
+      "repository_path": "admin/src/app/admin/customers/page.tsx",
+      "sha256": "993bffaacb8920ffb75e29e377f1bdff75becf46ce6ab99123195a14e8c692cb",
+      "bytes": 12158
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/debts/page.tsx",
+      "repository_path": "admin/src/app/admin/debts/page.tsx",
+      "sha256": "68e7ada2ff8b2086e278551c841d226d7c1ea3d4f8f7dcdb6709fdd542ff88b2",
+      "bytes": 11961
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/inventory/movements/page.tsx",
+      "repository_path": "admin/src/app/admin/inventory/movements/page.tsx",
+      "sha256": "5598f413501192a6146cb4658ba6054611372417e06f585696fb6a01547d90d7",
+      "bytes": 9394
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/inventory/page.tsx",
+      "repository_path": "admin/src/app/admin/inventory/page.tsx",
+      "sha256": "d26e0962bfc4ae20b3f12ec73afb82483b3a4389da0b27b4c5697a01750769ca",
+      "bytes": 9562
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/layout.tsx",
+      "repository_path": "admin/src/app/admin/layout.tsx",
+      "sha256": "3c06bea8a53f82b10e7b2d77f7a4ed89b367bd4d50e494711275cf660cadfb9b",
+      "bytes": 1598
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/organization/page.tsx",
+      "repository_path": "admin/src/app/admin/organization/page.tsx",
+      "sha256": "fb1111d2212b73f26d1aaca56d25f47e1e2bda20c64327a5edcd405bc2f5bee7",
+      "bytes": 6011
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/page.tsx",
+      "repository_path": "admin/src/app/admin/page.tsx",
+      "sha256": "254f9353e2d03c442ec7b8f6e34491c3b81cfb9356710b6a6cad4053ad8b5cda",
+      "bytes": 10753
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/purchases/page.tsx",
+      "repository_path": "admin/src/app/admin/purchases/page.tsx",
+      "sha256": "e0ae5a88882d49beee5b85c0f75f2de584d93f496f1ac292111122a50fdb5538",
+      "bytes": 26758
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/reports/layout.tsx",
+      "repository_path": "admin/src/app/admin/reports/layout.tsx",
+      "sha256": "afe05395e655871ed132d157bdc5a081694671182df12d5958d258471281ed3e",
+      "bytes": 1245
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/reports/page.tsx",
+      "repository_path": "admin/src/app/admin/reports/page.tsx",
+      "sha256": "71548fbe808790f03a0491ff59737ab1d44403b71bb1085cfb1366aee51a4337",
+      "bytes": 12888
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/sales/page.tsx",
+      "repository_path": "admin/src/app/admin/sales/page.tsx",
+      "sha256": "f3fe3e056d4d8bb0030b28da386ee388d559e5208285055f0c9bdff3c4d139be",
+      "bytes": 26102
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/sales/print/[id]/page.tsx",
+      "repository_path": "admin/src/app/admin/sales/print/[id]/page.tsx",
+      "sha256": "147a939f1ac2f1774dad2781cba0ec100100fc3531b894d81bd4513c607bb8ae",
+      "bytes": 7190
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/suppliers/page.tsx",
+      "repository_path": "admin/src/app/admin/suppliers/page.tsx",
+      "sha256": "861d6bcc2c8803091bd1dcea20ee78615eeca1567d6fce33cb1c4186dea9eead",
+      "bytes": 11098
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/sync/page.tsx",
+      "repository_path": "admin/src/app/admin/sync/page.tsx",
+      "sha256": "c57ac67a2eb87cfbb14062c81b485643ff16d9ef601456a19290ed3f8a4f5203",
+      "bytes": 7063
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/transfers/page.tsx",
+      "repository_path": "admin/src/app/admin/transfers/page.tsx",
+      "sha256": "20b6bbe0f578007a8bb97c1b0e67157af96eda57f713c78d0f4bfe97268f97c2",
+      "bytes": 23279
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/users/page.tsx",
+      "repository_path": "admin/src/app/admin/users/page.tsx",
+      "sha256": "de715abb00544a5451710425d69111b25da1777db932f0f1f21900dd9c4ea4a0",
+      "bytes": 13051
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/admin/v2/page.tsx",
+      "repository_path": "admin/src/app/admin/v2/page.tsx",
+      "sha256": "e17c1bcb085e062c0e20b0b05f0d95489c3b6892e07a02566fd884b60c244a09",
+      "bytes": 537
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/dashboard/page.tsx",
+      "repository_path": "admin/src/app/dashboard/page.tsx",
+      "sha256": "d6f00b9c38681bc2336e805b671ebfafe602c41e993dc7568e81089add4da797",
+      "bytes": 100
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/globals.css",
+      "repository_path": "admin/src/app/globals.css",
+      "sha256": "c25647455f9b441a997831b919e2dced9339994f5ee92eebf30fae9ef12f0a4f",
+      "bytes": 6005
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/layout.tsx",
+      "repository_path": "admin/src/app/layout.tsx",
+      "sha256": "8e668daa04b2eae3d9b48b24ba70b21520ab6d2c60ddb9eabe30389fb7299042",
+      "bytes": 665
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/login/login.css",
+      "repository_path": "admin/src/app/login/login.css",
+      "sha256": "3ccfc31a0cf7c4be5016fb35d24f3c621b737143858aeee212203b36b72621ae",
+      "bytes": 5938
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/login/page.tsx",
+      "repository_path": "admin/src/app/login/page.tsx",
+      "sha256": "ee42e85bcc4a3dfb47aabe4a948cd3702993a8c19c1dbd36e306a445e9571950",
+      "bytes": 4832
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/page.tsx",
+      "repository_path": "admin/src/app/page.tsx",
+      "sha256": "4726b788767e0d871c029f7aad8345a5c19c3682bbd2f91ba8eeedd6db0ea0f6",
+      "bytes": 99
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/account/page.tsx",
+      "repository_path": "admin/src/app/shop/account/page.tsx",
+      "sha256": "74698d2d585249203cb5c5f4d5739b04977f07acd021719470eb18b059ce56b1",
+      "bytes": 7723
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/agrovia-fonts.css",
+      "repository_path": "admin/src/app/shop/agrovia-fonts.css",
+      "sha256": "6295a4f89a8d00a3646190da319a6caa7617a510cc66035a3aa4995e76374cd5",
+      "bytes": 3870
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/agrovia.css",
+      "repository_path": "admin/src/app/shop/agrovia.css",
+      "sha256": "4093572618f5b8252254ea22e8c4f6c2068b39d652ea0a611be00b953979cc96",
+      "bytes": 15926
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/business/page.tsx",
+      "repository_path": "admin/src/app/shop/business/page.tsx",
+      "sha256": "3a992734973e2fb7d1b76aea9775dd4f80813f9a8431df8de1bde97132caf6bb",
+      "bytes": 266
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/cart/page.tsx",
+      "repository_path": "admin/src/app/shop/cart/page.tsx",
+      "sha256": "4e9c60a4895af06a0d8fee0efe26e2794d2f779b6e962bf856363ce8c5be4fac",
+      "bytes": 2884
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/checkout/page.tsx",
+      "repository_path": "admin/src/app/shop/checkout/page.tsx",
+      "sha256": "5717091dbefb0af0eecc27e9be4fe3f1132276e2a9e80332e760a92a6dd18da0",
+      "bytes": 7345
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/layout.tsx",
+      "repository_path": "admin/src/app/shop/layout.tsx",
+      "sha256": "db3f8d8b997fdcdd3ce61e7545c2883483c0e5faa58fe3fe37296153733c5211",
+      "bytes": 723
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/offers/page.tsx",
+      "repository_path": "admin/src/app/shop/offers/page.tsx",
+      "sha256": "aadf8040da5aee6aa86547bbf4e0c0ea44a714e4ea083ced54dc550a38cfb60f",
+      "bytes": 3919
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/orders/[id]/page.tsx",
+      "repository_path": "admin/src/app/shop/orders/[id]/page.tsx",
+      "sha256": "4fbc02c4848708d37246f4ed581bde6a3ef6f4c25b6d4ee09f4acbbe9f9d4bcb",
+      "bytes": 190
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/orders/page.tsx",
+      "repository_path": "admin/src/app/shop/orders/page.tsx",
+      "sha256": "8bde5ff4d704c3a7a92c1deed559087f0294cc3adea356e31bbf1ed1f54477cb",
+      "bytes": 1480
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/page.tsx",
+      "repository_path": "admin/src/app/shop/page.tsx",
+      "sha256": "b05a0c37cca98b306c0c479b0d551f97afe234cdfdecf7bab2b6b6757f70f48f",
+      "bytes": 5800
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/policies/[slug]/page.tsx",
+      "repository_path": "admin/src/app/shop/policies/[slug]/page.tsx",
+      "sha256": "ad22486bbb90b2f97149fb7b8f4433d96b7ba39b9ce53a1805a2d09153b97c8a",
+      "bytes": 197
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/products/[slug]/page.tsx",
+      "repository_path": "admin/src/app/shop/products/[slug]/page.tsx",
+      "sha256": "f2d7723be76fdbf6bb4b8a2f9f89e0117d2746fba166f1e7c175feb514fd4899",
+      "bytes": 213
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/products/page.tsx",
+      "repository_path": "admin/src/app/shop/products/page.tsx",
+      "sha256": "498885af61242d0ccabae2d8d2d19d876ef8db91f582443284c8202ef1990bf8",
+      "bytes": 494
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/reset-password/page.tsx",
+      "repository_path": "admin/src/app/shop/reset-password/page.tsx",
+      "sha256": "e5b36b0538caa1deb748b76e11e1354ebfcdc29fbc476558347f608770199ef5",
+      "bytes": 2139
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/shop.css",
+      "repository_path": "admin/src/app/shop/shop.css",
+      "sha256": "0a4350dc0fc813a1b2ac5e101917518297a47b15ebe5e2a75dea615f6f102398",
+      "bytes": 18839
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/support/page.tsx",
+      "repository_path": "admin/src/app/shop/support/page.tsx",
+      "sha256": "4eac9d43ef50b53cc6e1ed5023d1851e12cadf222116700982d00585bf2e3ba6",
+      "bytes": 2512
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/app/shop/wishlist/page.tsx",
+      "repository_path": "admin/src/app/shop/wishlist/page.tsx",
+      "sha256": "5f3cbdc3a18456f92eaaaee5d5c9e42b87d9cecffb1a62e0311fca6fbdf9e58a",
+      "bytes": 1646
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/admin-shell.tsx",
+      "repository_path": "admin/src/components/admin/admin-shell.tsx",
+      "sha256": "38b4f0def10a413fa74b9265422eaa32d36d728f001b9473ff06d3d015ba2a93",
+      "bytes": 8947
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/catalog-manager.tsx",
+      "repository_path": "admin/src/components/admin/catalog-manager.tsx",
+      "sha256": "dbf94f46a6aa731375eebf3ee263d4f6d7dc9dc05c793889c206b447af0f60d6",
+      "bytes": 18304
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/catalog-product-image.tsx",
+      "repository_path": "admin/src/components/admin/catalog-product-image.tsx",
+      "sha256": "991373fd639c271f8c531c46f85ebf0f3f2ee806309566c7f96edafa4a31292d",
+      "bytes": 1588
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-business.tsx",
+      "repository_path": "admin/src/components/admin/commerce-business.tsx",
+      "sha256": "35ca0ba1669d938aff8bd89baf635d1798fec0056414b56b47bdffd3ce5c7db1",
+      "bytes": 9687
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-customer-segments.tsx",
+      "repository_path": "admin/src/components/admin/commerce-customer-segments.tsx",
+      "sha256": "94fa9faf88b7186337460c92fe6d1868bb5aee1db1cb2529fefed7b4e0f3505a",
+      "bytes": 2161
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-fulfillment.tsx",
+      "repository_path": "admin/src/components/admin/commerce-fulfillment.tsx",
+      "sha256": "b14cc182926acf72258a8c38c3d53b3ee427255dbaf644b1a3333c8fea9aab96",
+      "bytes": 5881
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-marketing.tsx",
+      "repository_path": "admin/src/components/admin/commerce-marketing.tsx",
+      "sha256": "38c6080607301454861cff3ba0b559a2659942eb10d265d399c59e811b0ea043",
+      "bytes": 10520
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-moderation.tsx",
+      "repository_path": "admin/src/components/admin/commerce-moderation.tsx",
+      "sha256": "0567fdabd740b38c87b3323ff26ee8afb279e6e173a7bbba3821d49ca321799e",
+      "bytes": 3584
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-orders.tsx",
+      "repository_path": "admin/src/components/admin/commerce-orders.tsx",
+      "sha256": "5590ae454e1c2bf6c0e166c6053a82e2e9ef2f49501505281a3f2cd36b3461ed",
+      "bytes": 11063
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-reports.tsx",
+      "repository_path": "admin/src/components/admin/commerce-reports.tsx",
+      "sha256": "21d2686819015acf94002324c4a660c87170dd337a78ebc73b3f67b51ff39dfb",
+      "bytes": 5312
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/commerce-workspace.tsx",
+      "repository_path": "admin/src/components/admin/commerce-workspace.tsx",
+      "sha256": "5a03997b226a3996055300929e810fedda738bc0d33d6337676b354fa4582a42",
+      "bytes": 14059
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/notification-feed.tsx",
+      "repository_path": "admin/src/components/admin/notification-feed.tsx",
+      "sha256": "7d5f4c91d1f2da156332da29fc35aded4dc444424873935c9d495b6b0b697025",
+      "bytes": 3702
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/notification-panel.tsx",
+      "repository_path": "admin/src/components/admin/notification-panel.tsx",
+      "sha256": "e84113decfc34ddea543ba2c4e4de468717c85868eb4e28c6eb8d9eafb2c2873",
+      "bytes": 3473
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/organization-manager.tsx",
+      "repository_path": "admin/src/components/admin/organization-manager.tsx",
+      "sha256": "f0d76d2d2c40e6e4ad4a141c148ddb5c366590b4b9ff04a3b1dc2b6138c06283",
+      "bytes": 11988
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/product-content-sheet.tsx",
+      "repository_path": "admin/src/components/admin/product-content-sheet.tsx",
+      "sha256": "bd05a35ab0a54e740457bdd103d5051ed896df75c09ac3a44ddf1976e96666a1",
+      "bytes": 11410
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/product-create-shop-fields.tsx",
+      "repository_path": "admin/src/components/admin/product-create-shop-fields.tsx",
+      "sha256": "c42b424a59e1f4257f010c24389e878039924514a083508eb19030432739b2a2",
+      "bytes": 10735
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/product-image-editor.tsx",
+      "repository_path": "admin/src/components/admin/product-image-editor.tsx",
+      "sha256": "865eaec8c7fbb0c1c779b74742201eb9eac1fce54bc5a8e07e1ea21b68bde879",
+      "bytes": 3993
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/product-shop-editor.tsx",
+      "repository_path": "admin/src/components/admin/product-shop-editor.tsx",
+      "sha256": "2dc83a7d6665c6f8bf7aaa789ae2bc09486c493ee1475fbe070a7645a9d017b8",
+      "bytes": 7695
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/revenue-chart.tsx",
+      "repository_path": "admin/src/components/admin/revenue-chart.tsx",
+      "sha256": "de33cc79a0b5dcf3ca0bdc39aca2e724a1592462f5d80b0d1748f2ac02e39330",
+      "bytes": 1407
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/admin-shell-v2.tsx",
+      "repository_path": "admin/src/components/admin/v2/admin-shell-v2.tsx",
+      "sha256": "e6709dfbfe56146e6d3409cf46c3d2c61419fd9e0d03f4a7206b93c2f1af0328",
+      "bytes": 14020
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/business-workspace.tsx",
+      "repository_path": "admin/src/components/admin/v2/business-workspace.tsx",
+      "sha256": "7c4990053805c459827ee1d92f1f7a4fc3b73d648d570154bb4e2d6e958765c2",
+      "bytes": 14096
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/business.css",
+      "repository_path": "admin/src/components/admin/v2/business.css",
+      "sha256": "2bb1a54b26b9c49088fbe543a9476bf34598b3f1b49201b7e91e4e4a24827a51",
+      "bytes": 19350
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/catalog-tools.tsx",
+      "repository_path": "admin/src/components/admin/v2/catalog-tools.tsx",
+      "sha256": "7b826e6e282f15f2f1c29c4503b9cb0f10e15e615cf2d41288d54b90bb8b1d3f",
+      "bytes": 403
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/dashboard-insight-cards.tsx",
+      "repository_path": "admin/src/components/admin/v2/dashboard-insight-cards.tsx",
+      "sha256": "4431e39a762ef8cefb1f341551d85464737a47789bc11703039e03ed737a335f",
+      "bytes": 2797
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/dashboard-overview.tsx",
+      "repository_path": "admin/src/components/admin/v2/dashboard-overview.tsx",
+      "sha256": "7fba11c2802805fb1f2b4e3022fd4e306b6d107436090de9e235b75b69414352",
+      "bytes": 5635
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/legacy-page-intro.tsx",
+      "repository_path": "admin/src/components/admin/v2/legacy-page-intro.tsx",
+      "sha256": "68e6c38fd32a2b46717d5ae2ab05049f090ea5790aa92b32480e54da1f92e900",
+      "bytes": 307
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/navigation.ts",
+      "repository_path": "admin/src/components/admin/v2/navigation.ts",
+      "sha256": "e90e8a5f44c8719760acd67b95a4a51aa4af5630026518ae31c1399c06a36c97",
+      "bytes": 8842
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/primitives.tsx",
+      "repository_path": "admin/src/components/admin/v2/primitives.tsx",
+      "sha256": "5d24aa133f95f49a0e7098edf1ee21594c08545c0daa725f102a8cf1ef9bac96",
+      "bytes": 1767
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/report-charts.css",
+      "repository_path": "admin/src/components/admin/v2/report-charts.css",
+      "sha256": "19994710e23839072b44a7d736c99d1cd272bdbf81cb10d5a4c68f36c4d6fb13",
+      "bytes": 6229
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/report-charts.tsx",
+      "repository_path": "admin/src/components/admin/v2/report-charts.tsx",
+      "sha256": "f4082154db6cf624f6a57715959a2d8bb714b99716f5ba5365aecf190c5eed04",
+      "bytes": 10474
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/report-trend.tsx",
+      "repository_path": "admin/src/components/admin/v2/report-trend.tsx",
+      "sha256": "8f8917c7daae32f85167187fb294a528705197752db86399de30d6ec6bde8d33",
+      "bytes": 241
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/role-matrix.tsx",
+      "repository_path": "admin/src/components/admin/v2/role-matrix.tsx",
+      "sha256": "cdedbe73b5503ccb50ae497f2cec969413fc308e8f3d09a4e4feb31190f125e8",
+      "bytes": 2311
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/sheet.tsx",
+      "repository_path": "admin/src/components/admin/v2/sheet.tsx",
+      "sha256": "26c7811a14215d60750b2d6679cba385a66091403f9e417a177157382fbff6d9",
+      "bytes": 4691
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/shell-showcase.tsx",
+      "repository_path": "admin/src/components/admin/v2/shell-showcase.tsx",
+      "sha256": "dd76a51070c1f857d3bef1d465db4833faeaa5343ef2dadf801820384306903b",
+      "bytes": 6478
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/shell.css",
+      "repository_path": "admin/src/components/admin/v2/shell.css",
+      "sha256": "9e44711d7aacbd7d823f25d9aac71c49a12fc43eddb50215b8df21bd0197f5c8",
+      "bytes": 18734
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/shop-overview-report.tsx",
+      "repository_path": "admin/src/components/admin/v2/shop-overview-report.tsx",
+      "sha256": "60eee3c72bdddc2918caa4324f87686fea28981acb093fcb3a7d70355796dbb5",
+      "bytes": 8908
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/shop-overview.css",
+      "repository_path": "admin/src/components/admin/v2/shop-overview.css",
+      "sha256": "3ef0eca995bfb941e990f0abf8b1d77fd3509b1c78ddabce875a310c6934d6f9",
+      "bytes": 9108
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/admin/v2/view-context.tsx",
+      "repository_path": "admin/src/components/admin/v2/view-context.tsx",
+      "sha256": "a0b266b6add060ef93c37c81b8a100dada4b3b2d62b94b813167e4729de691e7",
+      "bytes": 484
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/design-status.tsx",
+      "repository_path": "admin/src/components/design-status.tsx",
+      "sha256": "149c914f67cf264288fb6ed81f4697a921f5043cb717d250cd259f6151ac3422",
+      "bytes": 261
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/business-portal.tsx",
+      "repository_path": "admin/src/components/shop/business-portal.tsx",
+      "sha256": "8b97fba5009f9f25d86e0529f1b2fe1f1983fa3d833ca1eef1666a3f1ab6773f",
+      "bytes": 13555
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/cart-context.tsx",
+      "repository_path": "admin/src/components/shop/cart-context.tsx",
+      "sha256": "2ba5329be4c5e2ca2c87fa253a1d1fc674896a5c51bec8af8fec18b392468bbd",
+      "bytes": 3982
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/image-picker.tsx",
+      "repository_path": "admin/src/components/shop/image-picker.tsx",
+      "sha256": "b2d2dd95bdbd26a2379cef5f6df8c8263e54a86b8898efa1a53c3a2eba73500c",
+      "bytes": 1592
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/order-detail.tsx",
+      "repository_path": "admin/src/components/shop/order-detail.tsx",
+      "sha256": "9f212ac8912ebdcf0dc7f35375c606f912ecabc32e70da7d68fda74ec0f4d0b2",
+      "bytes": 6128
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/order-reorder.tsx",
+      "repository_path": "admin/src/components/shop/order-reorder.tsx",
+      "sha256": "6d14a9e520b95b522a93303a0f496aa419fe0e5d89b4e6332da7f55bc81191d9",
+      "bytes": 2633
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/policy-page.tsx",
+      "repository_path": "admin/src/components/shop/policy-page.tsx",
+      "sha256": "721bdc0f7dd4d86a5990fca37fd4a73954a3986db159a308c673be766473eadc",
+      "bytes": 761
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/product-card.tsx",
+      "repository_path": "admin/src/components/shop/product-card.tsx",
+      "sha256": "675a9c30689e7c66261dc8635285c6e5848e0d694092ac8e0eaa9b68ed17c7a2",
+      "bytes": 2151
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/product-detail.tsx",
+      "repository_path": "admin/src/components/shop/product-detail.tsx",
+      "sha256": "f3c21b44533a0023ebe21b6653dfeb38c4f56d5ff5c31f3132e5a4d21e6f26f5",
+      "bytes": 4335
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/product-feedback.tsx",
+      "repository_path": "admin/src/components/shop/product-feedback.tsx",
+      "sha256": "98bbfa07cba30c04394d24b8515e85b19f43abfa156cb76102ce4e5a09b535a5",
+      "bytes": 3194
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/product-image.tsx",
+      "repository_path": "admin/src/components/shop/product-image.tsx",
+      "sha256": "9f6dd286465aad69ff32e34377ede0b986d1061fba4ec02610d6f25a805d3b32",
+      "bytes": 639
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/product-purchase.tsx",
+      "repository_path": "admin/src/components/shop/product-purchase.tsx",
+      "sha256": "9e1fb95e7bec827e042c5ecac26997350016f3db987ce793097ccfe996874716",
+      "bytes": 1654
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/products-catalog.tsx",
+      "repository_path": "admin/src/components/shop/products-catalog.tsx",
+      "sha256": "0e9201566b72fb80929dc415c4b573b4ac3ac95348dae61fc366c3403f43176e",
+      "bytes": 4242
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/return-panel.tsx",
+      "repository_path": "admin/src/components/shop/return-panel.tsx",
+      "sha256": "9147059115b7c6412b012f63038afa7c3ecd2b9b04c5c63f3f5a422aa2b58f4a",
+      "bytes": 11637
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/review-editor.tsx",
+      "repository_path": "admin/src/components/shop/review-editor.tsx",
+      "sha256": "e208c6180ba83f411ffd65124ba7b82b054c2b0ed7c14415673a31366125d1bf",
+      "bytes": 3057
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/shop-assistant.tsx",
+      "repository_path": "admin/src/components/shop/shop-assistant.tsx",
+      "sha256": "f39100dfea94b49c568ad7c67c8f0a258bcbeb8424ef501e10f876f298294d9c",
+      "bytes": 3034
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/shop-footer.tsx",
+      "repository_path": "admin/src/components/shop/shop-footer.tsx",
+      "sha256": "9cb3b5449d8395c1943aded0ee3a4bb7fdba5fbec511524a6e3cb21f224bdcdb",
+      "bytes": 1590
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/shop-header.tsx",
+      "repository_path": "admin/src/components/shop/shop-header.tsx",
+      "sha256": "594f8cc5147825bd63a05f2de98169873b571fd009ddd6b96b22b983037f3ad8",
+      "bytes": 3145
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/shop-shared.tsx",
+      "repository_path": "admin/src/components/shop/shop-shared.tsx",
+      "sha256": "6c66e5d965c0dbcd6ead475dc2e46fc890c3d28912299d960b21dede1d8469f4",
+      "bytes": 832
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/shop/support-inbox.tsx",
+      "repository_path": "admin/src/components/shop/support-inbox.tsx",
+      "sha256": "e7d625d8b9140a2290f6740b5344c45ab1f44caf8ced56c8cc72e63b165cde7c",
+      "bytes": 7033
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/storefront-motion.tsx",
+      "repository_path": "admin/src/components/storefront-motion.tsx",
+      "sha256": "6363bc423c2d1c94627c5911b235d927c62a7a7ad65b7fd5b8e740b5c1f4debc",
+      "bytes": 699
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/avatar.tsx",
+      "repository_path": "admin/src/components/ui/avatar.tsx",
+      "sha256": "bff76087ea9af25c6aa5a5306088dc66e62204a126752c38561736acff00717f",
+      "bytes": 3028
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/badge.tsx",
+      "repository_path": "admin/src/components/ui/badge.tsx",
+      "sha256": "d9fb280e266119c4b62a4c518e63152de27b094c68d3e5f8929d05bfb0c1bc6c",
+      "bytes": 1915
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/breadcrumb.tsx",
+      "repository_path": "admin/src/components/ui/breadcrumb.tsx",
+      "sha256": "cbd2b85e7a0097438855ff1bba8ac0cc3d1229e4c94bda3d52176fd22ea2ac62",
+      "bytes": 2576
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/button.tsx",
+      "repository_path": "admin/src/components/ui/button.tsx",
+      "sha256": "313353436d0fcc8e44ab470adb614b9fd013d28626f624328ea0d66d41a6c81b",
+      "bytes": 3230
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/card.tsx",
+      "repository_path": "admin/src/components/ui/card.tsx",
+      "sha256": "8ad3a18d36bda0598dc0e9aa96ea22854944d5443ee4946f1d173815e115375f",
+      "bytes": 2620
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/chart.tsx",
+      "repository_path": "admin/src/components/ui/chart.tsx",
+      "sha256": "1869f68f2eb0108071681c78f3827280fb38212ce7b145139d7ed5d65823ec40",
+      "bytes": 10491
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/checkbox.tsx",
+      "repository_path": "admin/src/components/ui/checkbox.tsx",
+      "sha256": "d1b341a2b439da009e42388cde8a829adcf55ecb0d447449271aacad752e73ba",
+      "bytes": 1529
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/drawer.tsx",
+      "repository_path": "admin/src/components/ui/drawer.tsx",
+      "sha256": "40ebfe5567a498da849addbfb1e966fd147c0b7503523fb1c3ebad9df077a02d",
+      "bytes": 11346
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/dropdown-menu.tsx",
+      "repository_path": "admin/src/components/ui/dropdown-menu.tsx",
+      "sha256": "ffd69006ed9c79e16ffefffbf8a9ebbf1c34ca38f40cb9939c946a71943127d7",
+      "bytes": 8726
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/input.tsx",
+      "repository_path": "admin/src/components/ui/input.tsx",
+      "sha256": "dab990dfefa0ba78854ab6602ad074270dba9d7d1262184d9bfbb62bd990903b",
+      "bytes": 1030
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/label.tsx",
+      "repository_path": "admin/src/components/ui/label.tsx",
+      "sha256": "b3b7b21d2877838fc73713df48a47248392de04a3b3fafa8961369f33ab14530",
+      "bytes": 508
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/select.tsx",
+      "repository_path": "admin/src/components/ui/select.tsx",
+      "sha256": "4ba225fb838887a2493a8908774f1294ffbc2030af1e372425c6de76f598f0eb",
+      "bytes": 6645
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/separator.tsx",
+      "repository_path": "admin/src/components/ui/separator.tsx",
+      "sha256": "9a80ff8c110e0c55489509f4f82ebcc929c0174b59544047147b7134f86a54e7",
+      "bytes": 535
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/sheet.tsx",
+      "repository_path": "admin/src/components/ui/sheet.tsx",
+      "sha256": "67ed95ab6bb4f61cdcee2cf2811a80b40a7e11adfec5d35eb71707b51f753598",
+      "bytes": 4424
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/skeleton.tsx",
+      "repository_path": "admin/src/components/ui/skeleton.tsx",
+      "sha256": "4c2af7fa9c645358a0fb188779deab6f0b981733b62befc25e18aaebea1350dc",
+      "bytes": 266
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/sonner.tsx",
+      "repository_path": "admin/src/components/ui/sonner.tsx",
+      "sha256": "2dd975ad2170ba2570b00e58713dcbda90f26a7fffdaceb1ef7255f450c2d2a6",
+      "bytes": 1226
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/table.tsx",
+      "repository_path": "admin/src/components/ui/table.tsx",
+      "sha256": "749b0501e97591f8d7c9ef81366d636e4b47857a15a28e6cf3b87841232e74bf",
+      "bytes": 2392
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/tabs.tsx",
+      "repository_path": "admin/src/components/ui/tabs.tsx",
+      "sha256": "958b817b256cffae986d046168b70dd0153d542b4c521ee8bbdda349010011ef",
+      "bytes": 3487
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/toggle-group.tsx",
+      "repository_path": "admin/src/components/ui/toggle-group.tsx",
+      "sha256": "ea72fb41374a94a1585e282cc77b4c90de0c50715f912286646ec24f4c092c2d",
+      "bytes": 3174
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/toggle.tsx",
+      "repository_path": "admin/src/components/ui/toggle.tsx",
+      "sha256": "48ab6456afc25c4cf79537252cb9512c5c2846d2b1796170eab8aca91ebf7ddf",
+      "bytes": 1752
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/components/ui/tooltip.tsx",
+      "repository_path": "admin/src/components/ui/tooltip.tsx",
+      "sha256": "f83d5f511812573f4ac98b866d397a46fda0f27eeb0af0ea89af01969eefbc5a",
+      "bytes": 2836
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/api.ts",
+      "repository_path": "admin/src/lib/api.ts",
+      "sha256": "78f83e82837e10d077780e9a8fe025110dde66c5935d4fa4a65e64cd227a3814",
+      "bytes": 7350
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/dashboard-insights.ts",
+      "repository_path": "admin/src/lib/dashboard-insights.ts",
+      "sha256": "b30046dfb37bfa26ac2a6d2c9def0028a304176ff5fa1bc80624a76e11212a1e",
+      "bytes": 3359
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/mock-data.ts",
+      "repository_path": "admin/src/lib/mock-data.ts",
+      "sha256": "5ad7eebd4919db222d78c78babb1a3e0c2598b92c000cf0e5ea7b31b31251e4d",
+      "bytes": 2657
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/money.ts",
+      "repository_path": "admin/src/lib/money.ts",
+      "sha256": "0e026653bed42fb670fc9ff8cbe9e3c030b4e06e60f64e1dbec65ece00ef200c",
+      "bytes": 1331
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/quantity.ts",
+      "repository_path": "admin/src/lib/quantity.ts",
+      "sha256": "efd6c0d05774c19d07002a2892bba7ca6bbe8b529e49d2793733b723d10ba016",
+      "bytes": 1489
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/runtime-environment.ts",
+      "repository_path": "admin/src/lib/runtime-environment.ts",
+      "sha256": "c34646c0ad56dfdd6924a2a1eb6a60b5e5465bd1d49918f0328027c7d9cb663c",
+      "bytes": 468
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/server-origin.ts",
+      "repository_path": "admin/src/lib/server-origin.ts",
+      "sha256": "44985fd80475c2762fff91d231bd17ae217eb72943a3db14879776613b96a6a1",
+      "bytes": 269
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/shop-api.ts",
+      "repository_path": "admin/src/lib/shop-api.ts",
+      "sha256": "2c2e030d6aaba8f0ab7a010e259d14349a384845e08181b5732468384245ad34",
+      "bytes": 3452
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/shop-orders.ts",
+      "repository_path": "admin/src/lib/shop-orders.ts",
+      "sha256": "8fabeff2afa0d65499f71c58467a5cb815089ff3a1212e0b680691a1a476a857",
+      "bytes": 2872
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/lib/utils.ts",
+      "repository_path": "admin/src/lib/utils.ts",
+      "sha256": "14300d758170c270c75b057f38fedb3793a5920ea872f0477e29fb131185e8a7",
+      "bytes": 24
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/src/proxy.ts",
+      "repository_path": "admin/src/proxy.ts",
+      "sha256": "c8db1709211053e9b88ce904288de667ed8eb1d66875a72191f2f90bc255fa7c",
+      "bytes": 420
+    },
+    {
+      "qa_path": "web-quan-ly-ban-hang/tsconfig.json",
+      "repository_path": "admin/tsconfig.json",
+      "sha256": "5c51df4c59f4510d8c7dadf07a5c32132228826a3b331da5e286207b4df7ef9c",
+      "bytes": 670
+    },
+    {
+      "qa_path": "api-laravel/.npmrc",
+      "repository_path": "api-laravel/.npmrc",
+      "sha256": "e968d1d336604e9986ea31306a4d9e1442f4312fca262f444384baf928d6560e",
+      "bytes": 31,
+      "provenance": "Live QA safe config; outside 299-file backup source manifest; reviewed before inclusion"
+    }
+  ],
+  "excluded_binary_assets": [
+    {
+      "path": "api-laravel/public/favicon.ico",
+      "repository_path": "api-laravel/public/favicon.ico",
+      "reason": "Binary favicon excluded by no-media scope; original bytes retained in step1 backup/source",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "web-quan-ly-ban-hang/src/app/favicon.ico",
+      "repository_path": "admin/src/app/favicon.ico",
+      "reason": "Binary favicon excluded by no-media scope; original bytes retained in step1 backup/source",
+      "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932"
+    }
+  ],
+  "shared_support": [
+    {
+      "path": "database/catalog-demo.json",
+      "sha256": "ead66243df463cec789c083497d5f1f5cd1cc6c4b0feb2e3856a28bdbb15bbe3",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "database/database.php",
+      "sha256": "a12178c607236e08643abfa5476e1c388e5434f4170524aa227cc89356575e37",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "database/demo.mjs",
+      "sha256": "e710c98c84cd20246fa0b63f3884db1e055188a015623a2fe3e92b9a2c49739d",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "database/shop-demo.mjs",
+      "sha256": "d567d33429f6a7c8b05f750446645a222a63198a229701b1f72faa473437897e",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/package-lock.json",
+      "sha256": "232925761bb1c2cfbcfa294c642405ff95d4c4bc55f11ae0a657614e96e9b8a8",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/package.json",
+      "sha256": "9b943ae85ae14561c6c862f0c44bf071a12b48d1011f84f772ce77c8bf13ba0e",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/contract.mjs",
+      "sha256": "38aa991a6b9aa89bdafd241d23f6d3f9225e14ecb27afc9f9ce0b92cbd789d59",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/mongo-metrics.mjs",
+      "sha256": "416cf0b301b6019d8630ab451971e0543e38825ed0dfdac8f90da57168997e78",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/mongo-notifications.mjs",
+      "sha256": "445d72ddfc9f53cbc3f3646fffeb68a9dea6b5c7cdb36701cc24d04014468b93",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/mongo-outbox.mjs",
+      "sha256": "dc1601a682a2afcd4912a71a19ca7ab0b374531e6c2c1f5f917a66d8913bed29",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/mongo-runtime.mjs",
+      "sha256": "3b20e99daad7fa79998eee01eef9d60383b07767f13dee72a61142330596b1f3",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/mongo-snapshots.mjs",
+      "sha256": "b08e4d5bb6fb70c843c5d156c6b8e3cf0878301cf3a77d2e461dea2a4bb52608",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/notifications.mjs",
+      "sha256": "a79597fbbe5f5d0aeaa403665b7e880b4bd481624356ed8e0ff2e579bd7cd556",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/rebuild-snapshots.mjs",
+      "sha256": "43b7ee5c14ef95206125e401841bdb8e4f2f8ebf82faf111f40baa2edcd88147",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/schema.mjs",
+      "sha256": "3a1f97d8aff1fac4f3990016b977f06ba618b9d629385177bed184a80de6fc4a",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/snapshots.mjs",
+      "sha256": "a770037755d8780ef9b6a73cae239db4f4a8ffe1031416f89a4373ee96cc04cc",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    },
+    {
+      "path": "outbox-worker/src/worker.mjs",
+      "sha256": "732ddab9384eabe783a8238eec0b8ddab8d45aa535536e0f6727e05e0f3efd5e",
+      "provenance": "Inherited historical export; equal Main; not launched by QA"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ export async function shopRequest<T>(path: string, method = "GET", value?: unkno
   const result = await apiFetch<{ data: T }>(path, { method, ...(value === undefined ? {} : { body: JSON.stringify(value) }) })
   return result.data
 }
-export function shopMediaUrl(value:string){return /^\/api\/shop-media\/[1-9][0-9]*$/.test(value)?`${apiUrl}${value}`:value}
+export function shopMediaUrl(value:string){return /^\/api\/(?:shop-media\/[1-9][0-9]*|shop-product-images\/[1-9][0-9]*\/[a-f0-9-]{36}\.(?:jpg|png|webp))$/.test(value)?`${apiUrl}${value}`:value}
 export async function shopUpload(chain:string,purpose:string,file:File):Promise<string>{
  const csrf=await fetch(`${apiUrl}/sanctum/csrf-cookie`,{credentials:"include",headers:{Accept:"application/json"}})
  if(!csrf.ok)throw new ApiError("Không khởi tạo được phiên tải ảnh.",csrf.status)

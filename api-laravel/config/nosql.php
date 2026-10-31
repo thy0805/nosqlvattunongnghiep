@@ -7,6 +7,7 @@ return [
     'connection' => env('DB_CONNECTION'),
     'app_url' => env('APP_URL'),
     'web_origin' => env('WEB_ORIGINS'),
+    'session_files' => storage_path('framework/sessions'),
     'session_cookie' => env('SESSION_COOKIE'),
     'session_driver' => env('SESSION_DRIVER'),
     'session_domain' => env('SESSION_DOMAIN'),

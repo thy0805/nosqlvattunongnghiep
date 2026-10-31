@@ -6,7 +6,7 @@ export type AdminSection = { key: string; label: string; icon: string; items: Ad
 export const adminSections: AdminSection[] = [
   { key: "overview", label: "Tổng quan", icon: "dashboard", items: [{ label: "Dashboard hệ thống", screen: "dashboard" }, { label: "Tổng quan Shop", screen: "shop-overview" }, { label: "Báo cáo kinh doanh", screen: "reports" }] },
   { key: "sales", label: "Bán hàng & đơn hàng", icon: "bag", items: [{ label: "Đơn hàng Online", screen: "orders" }, { label: "Bán hàng tại quầy (POS)", screen: "pos" }, { label: "Hóa đơn", screen: "invoices" }, { label: "Giao nhận", screen: "delivery" }, { label: "Đối soát COD", screen: "delivery", tab: "cod" }, { label: "Yêu cầu hủy đơn", screen: "after-sales", tab: "cancel" }, { label: "Đổi trả & hoàn tiền", screen: "after-sales", tab: "returns" }] },
-  { key: "stock", label: "Vật tư & kho", icon: "box", items: [{ label: "Danh sách sản phẩm", screen: "products" }, { label: "Thêm / sửa sản phẩm", screen: "product-form" }, { label: "Danh mục vật tư", screen: "categories" }, { label: "Tồn theo lô & HSD", screen: "inventory" }, { label: "Nhập / xuất kho", screen: "stock" }, { label: "Điều chuyển chi nhánh", screen: "transfers" }, { label: "Nhà cung cấp", screen: "suppliers" }] },
+  { key: "stock", label: "Vật tư & kho", icon: "box", items: [{ label: "Danh sách sản phẩm", screen: "products" }, { label: "Tồn theo lô & HSD", screen: "inventory" }, { label: "Nhập / xuất kho", screen: "stock" }, { label: "Điều chuyển chi nhánh", screen: "transfers" }, { label: "Nhà cung cấp", screen: "suppliers" }] },
   { key: "marketing", label: "Marketing", icon: "chart", items: [{ label: "Chiến dịch", screen: "marketing" }, { label: "Voucher", screen: "vouchers" }, { label: "Phát hành mã", screen: "vouchers", tab: "issue" }, { label: "Báo cáo ưu đãi", screen: "marketing", tab: "report" }] },
   { key: "customers", label: "Khách hàng & đại lý", icon: "users", items: [{ label: "Khách hàng", screen: "customers" }, { label: "Đại lý B2B", screen: "b2b" }, { label: "Bảng giá sỉ", screen: "b2b", tab: "prices" }, { label: "Báo giá", screen: "quotes" }, { label: "Công nợ", screen: "debts" }, { label: "Mua định kỳ", screen: "subscriptions" }] },
   { key: "care", label: "Chăm sóc khách hàng", icon: "chat", items: [{ label: "Danh sách ticket", screen: "tickets" }, { label: "Chi tiết / phản hồi", screen: "ticket" }, { label: "Hội thoại", screen: "chat" }, { label: "Đánh giá sản phẩm", screen: "reviews" }, { label: "Hỏi đáp sản phẩm", screen: "questions" }, { label: "Thông báo", screen: "notifications" }] },
@@ -55,13 +55,15 @@ export function destinationHref(item: AdminDestination) {
   return `/admin/v2?${params}`
 }
 
-export function destinationAllowed(screen: string, profile: Profile) {
-  if (screen === "sync") return profile.user.can_manage_sync
+export function destinationAllowed(screen: string, profile: Profile, tab = "") {
+  if (["sync", "employees", "shop-settings", "marketing", "vouchers", "b2b", "quotes", "reviews", "questions"].includes(screen) || (screen === "products" && tab === "publications")) return profile.user.can_manage_sync
+  if (screen === "product-form") return profile.user.can_manage_catalog
   if (["reports", "shop-overview"].includes(screen)) return profile.user.can_view_reports
   return true
 }
 
 export function findDestination(screen: string, tab = ""): { group: AdminSection; item: AdminDestination } | null {
+  if ((screen === "product-form" || screen === "categories") && !tab) return findDestination("products")
   const extraTabs: Record<string, Record<string, string>> = { inventory: { alerts: "Cảnh báo & ngưỡng tồn" }, stock: { movements: "Biến động tồn" }, products: { publications: "Nội dung trưng bày Shop" }, categories: { units: "Đơn vị tính" }, debts: { payable: "Công nợ phải trả" }, "shop-settings": { pages: "Chính sách Shop", banners: "Banner Shop" }, "after-sales": { refunds: "Hoàn tiền" } }
   if (extraTabs[screen]?.[tab]) {
     const parent = findDestination(screen, "") ?? findDestination(screen, screen === "after-sales" ? "returns" : "")

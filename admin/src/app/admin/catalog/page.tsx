@@ -8,6 +8,7 @@ import { BookOpen, Package, RotateCw, Search } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { CatalogManager } from "@/components/admin/catalog-manager"
+import { CatalogProductImage } from "@/components/admin/catalog-product-image"
 import { ProductContentSheet } from "@/components/admin/product-content-sheet"
 import { useAdminProfile } from "@/components/admin/admin-shell"
 import { ApiError, apiFetch, type CatalogCategory, type CatalogProduct, type CatalogResponse } from "@/lib/api"
@@ -72,15 +73,15 @@ export default function CatalogPage() {
       </LegacyPageIntro>
 
       {error && <div role="alert" className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"><span>{error}</span><button type="button" onClick={() => setReload((value) => value + 1)} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-red-300 px-3 font-semibold hover:bg-red-100"><RotateCw className="size-4" />Thử lại</button></div>}
-      {profile.user.can_manage_catalog && result && <CatalogManager source={result} onSaved={() => setReload((value) => value + 1)} />}
+      {profile.user.can_manage_catalog && result && <CatalogManager source={result} onSaved={() => setReload((value) => value + 1)} onEditProduct={setSelectedProduct} onProductSaved={setSelectedProduct} />}
 
       <Card className="mt-7 border-black/8 bg-[#fbfaf5] shadow-none">
         <CardHeader className="gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <CardTitle className="text-lg">Danh sách vật tư</CardTitle>
-            <p className="mt-1 text-sm text-muted-foreground">Dữ liệu từ MongoDB, dùng chung cho mọi chuỗi.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Trạng thái quản lý mã hàng, không phải số lượng tồn kho hay trạng thái hiển thị trên Shop.</p>
           </div>
-          <div className="flex flex-col gap-2 sm:flex-row">
+          <div className="flex flex-wrap gap-2">
             <label className="relative">
               <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
               <input aria-label="Tìm vật tư" value={search} onChange={(event) => { setSearch(event.target.value); setPage(1); setResult(null) }} placeholder="Tên, mã hoặc hoạt chất" className="h-11 w-full rounded-xl border border-black/10 bg-white pl-9 pr-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[#274f3a] sm:w-60" />
@@ -89,16 +90,16 @@ export default function CatalogPage() {
               <option value="">Tất cả nhóm</option>
               {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
             </select>
-            <label className="flex min-h-11 items-center gap-2 rounded-xl border border-black/10 bg-white px-3 text-sm"><input type="checkbox" checked={activeOnly} onChange={(event) => { setActiveOnly(event.target.checked); setPage(1); setResult(null) }} className="size-4 accent-[#274f3a]" />Chỉ còn dùng</label>
+            <label className="flex min-h-11 items-center gap-2 rounded-xl border border-black/10 bg-white px-3 text-sm"><input type="checkbox" checked={activeOnly} onChange={(event) => { setActiveOnly(event.target.checked); setPage(1); setResult(null) }} className="size-4 accent-[#274f3a]" />Chỉ hiện vật tư đang hoạt động</label>
           </div>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[700px] text-left text-sm">
+            <table className="w-full min-w-[1050px] text-left text-sm">
               <thead className="border-b border-black/8 text-xs uppercase tracking-wide text-muted-foreground">
                 <tr><th className="py-3 pr-5 font-medium">Vật tư</th><th className="py-3 pr-5 font-medium">Nhóm</th><th className="py-3 pr-5 font-medium">Hoạt chất</th><th className="py-3 pr-5 font-medium">Đơn vị</th><th className="py-3 pr-5 font-medium">Giá bán</th><th className="py-3 pr-5 font-medium">Thuế</th><th className="py-3 pr-5 font-medium">Trạng thái</th><th className="py-3 font-medium">Nội dung</th></tr>
               </thead>
-              <tbody>{!loading && result?.data.map((item) => <tr key={item.id} className="border-b border-black/6 last:border-0"><td className="py-4 pr-5"><div className="av2-product-identity"><span className="av2-product-placeholder" aria-label="Catalog chưa cung cấp ảnh"><Package size={21}/></span><div><p className="font-semibold">{item.name}</p><p className="mt-1 text-xs text-muted-foreground">{item.code}</p></div></div></td><td className="py-4 pr-5">{item.category_name}</td><td className="py-4 pr-5 text-muted-foreground">{item.active_ingredient || "—"}</td><td className="py-4 pr-5">{item.unit_name}</td><td className="py-4 pr-5 font-semibold tabular-nums">{formatVnd(item.sale_price)}</td><td className="py-4 pr-5 tabular-nums">{item.tax_rate === null ? "Chưa cấu hình" : `${item.tax_rate}%`}</td><td className="py-4"><span className={`rounded-full px-2.5 py-1 text-xs font-medium ${item.is_active && item.category_is_active && item.unit_is_active ? "bg-[#e1e5d3] text-[#274f3a]" : "bg-amber-100 text-amber-900"}`}>{item.is_active && item.category_is_active && item.unit_is_active ? "Còn dùng" : "Đã ngừng"}</span></td><td className="py-4"><button type="button" onClick={() => setSelectedProduct(item)} className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-black/10 px-3 text-xs font-semibold hover:bg-[#e9eadf]"><BookOpen className="size-3.5" />Xem nội dung</button></td></tr>)}</tbody>
+              <tbody>{!loading && result?.data.map((item) => <tr key={item.id} className="border-b border-black/6 last:border-0"><td className="py-4 pr-5"><div className="av2-product-identity"><CatalogProductImage product={item}/><div><button type="button" onClick={() => setSelectedProduct(item)} className="text-left font-semibold hover:underline" aria-label={`Sửa sản phẩm ${item.name}`}>{item.name}</button><p className="mt-1 text-xs text-muted-foreground">{item.code}</p></div></div></td><td className="py-4 pr-5">{item.category_name}</td><td className="py-4 pr-5 text-muted-foreground">{item.active_ingredient || "—"}</td><td className="py-4 pr-5">{item.unit_name}</td><td className="py-4 pr-5 font-semibold tabular-nums">{formatVnd(item.sale_price)}</td><td className="py-4 pr-5 tabular-nums">{item.tax_rate === null ? "Chưa cấu hình" : `${item.tax_rate}%`}</td><td className="py-4"><span className={`inline-flex whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-medium ${item.is_active && item.category_is_active && item.unit_is_active ? "bg-[#e1e5d3] text-[#274f3a]" : "bg-amber-100 text-amber-900"}`}>{item.is_active && item.category_is_active && item.unit_is_active ? "Đang hoạt động" : "Đã ngừng hoạt động"}</span></td><td className="py-4"><button type="button" onClick={() => setSelectedProduct(item)} className="inline-flex min-h-10 items-center gap-1.5 whitespace-nowrap rounded-full border border-black/10 px-3 text-xs font-semibold hover:bg-[#e9eadf]"><BookOpen className="size-3.5" />Thông tin sản phẩm</button></td></tr>)}</tbody>
             </table>
             {loading && <div role="status" className="space-y-3 py-6"><span className="sr-only">Đang tải danh mục vật tư</span>{[1, 2, 3].map((row) => <Skeleton key={row} className="h-12 w-full" />)}</div>}
             {!loading && !error && result?.data.length === 0 && <div className="py-12 text-center"><Package className="mx-auto size-9 text-muted-foreground" /><p className="mt-3 font-medium">Không có vật tư phù hợp</p><p className="mt-1 text-sm text-muted-foreground">Thử từ khóa hoặc nhóm khác.</p></div>}
@@ -106,7 +107,7 @@ export default function CatalogPage() {
           {result && <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground"><span>{result.pagination.total} vật tư</span>{result.pagination.last_page > 1 && <div className="flex items-center gap-3"><button type="button" disabled={page <= 1 || loading} onClick={() => { setPage(page - 1); setResult(null) }} className="min-h-10 rounded-lg border border-black/10 px-3 py-2 text-foreground hover:bg-[#e9eadf] disabled:opacity-40">Trang trước</button><span>{result.pagination.current_page} / {result.pagination.last_page}</span><button type="button" disabled={page >= result.pagination.last_page || loading} onClick={() => { setPage(page + 1); setResult(null) }} className="min-h-10 rounded-lg border border-black/10 px-3 py-2 text-foreground hover:bg-[#e9eadf] disabled:opacity-40">Trang sau</button></div>}</div>}
         </CardContent>
       </Card>
-      <ProductContentSheet product={selectedProduct} canManage={profile.user.can_manage_catalog} onClose={() => setSelectedProduct(null)} />
+      <ProductContentSheet key={selectedProduct?.id ?? "closed"} source={result} onProductSaved={setSelectedProduct} product={selectedProduct} canManage={profile.user.can_manage_catalog} onClose={() => setSelectedProduct(null)} onShopSaved={() => setReload(value => value + 1)} />
     </main>
   )
 }

@@ -1,5 +1,7 @@
+import { runtimeEnvironment } from "./runtime-environment"
+
 export function nosqlServerApiUrl(): string {
-  const url = process.env.API_URL
-  if (url !== "http://nosql.localhost:8010") throw new Error("NOSQL_SERVER_API_ORIGIN_REJECTED")
-  return url
+  const expected = runtimeEnvironment().api
+  if (process.env.API_URL !== expected) throw new Error("NOSQL_SERVER_API_ORIGIN_REJECTED")
+  return expected
 }

@@ -4,6 +4,8 @@ use App\Http\Controllers\{ShopController,ShopAdminController};
 use App\Http\Middleware\EnsureActiveUser;
 use Illuminate\Support\Facades\Route;
 
+Route::get('api/shop-product-images/{chainId}/{key}',[\App\Http\Controllers\ShopProductImageController::class,'show'])->whereNumber('chainId');
+
 Route::get('api/shop-media/{id}',[\App\Http\Controllers\ShopUploadController::class,'show'])->whereNumber('id');
 
 Route::prefix('api/shop')->group(function():void {
@@ -28,6 +30,7 @@ Route::prefix('api/shop-admin')->middleware(['auth',EnsureActiveUser::class])->g
     Route::prefix('{chainId}')->whereNumber('chainId')->group(function():void {
         Route::match(['get','put'],'settings',[ShopAdminController::class,'settings']);
         Route::get('products',[ShopAdminController::class,'products']);
+        Route::post('product-images',[\App\Http\Controllers\ShopProductImageController::class,'create'])->middleware('throttle:30,1');
         Route::put('products/{productId}',[ShopAdminController::class,'products'])->whereNumber('productId');
         Route::match(['get','post'],'content/{kind}',[ShopAdminController::class,'content'])->whereIn('kind',['pages','banners']);
         Route::put('content/{kind}/{id}',[ShopAdminController::class,'content'])->whereIn('kind',['pages','banners'])->whereNumber('id');
